@@ -7,7 +7,7 @@
 1. postgres中的表已经存在，若里面还有数据，是否会影响数据导入？
 2. 数据导入是用insert还是copy，亦或是其他的命令执行？
 
-## 环境准备及系统启动
+## 开始测试
 
 1. 环境准备
    > 由于kafka 开源社区提供了confluent-platform，其中内置了很多种connect,其中就包括kafka-connect-jdbc-sink/source。所以我们可以直接拿来用，当前的最新版是confluent-3.2.0。  
@@ -38,7 +38,9 @@
    Created topic "jdbc_test".
    ```
 7. 启动connnect-jdbc-sink
+
    * 配置参数
+
      ```
      [node1]$ cat etc/kafka-connect-jdbc/sink-quickstart-postgres.properties
      name=hwt-jdbc-pg-sink
@@ -54,21 +56,46 @@
      #connection.password=hewenting
      auto.create=true
      ```
+
    * 启动进程
 
    ```
    ./bin/connect-standalone etc/schema-registry/connect-avro-standalone.properties etc/kafka-connect-jdbc/sink-quickstart-postgres.properties
    ```
+
 8. 启动producer
+   ```
+   ./bin/kafka-avro-console-producer --broker-list localhost:9092 --topic  jdbc_test2 --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"id","type":"int"},{"name":"product", "type": "string"}, {"name":"quantity", "type": "int"}, {"name":"price", "type":"float"}]}'
+   启动之后输入数据：
+   {"id": 999, "product": "foo", "quantity": 100, "price": 50}
+   ```
 9. 启动consumer
-10.  * 配置环境
-11. 1
+   ```
+   ./bin/kafka-avro-console-consumer --topic jdbc_test --bootstrap-server localhost:9092 --from-beginning
+   SLF4J: Class path contains multiple SLF4J bindings.
+   SLF4J: Found binding in [jar:file:/home/hewenting/software/confluent-3.2.0/share/java/kafka-serde-tools/slf4j-log4j12-1.7.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+   SLF4J: Found binding in [jar:file:/home/hewenting/software/confluent-3.2.0/share/java/schema-registry/slf4j-log4j12-1.7.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+   SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+   SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+   {"id":999,"product":"foo","quantity":100,"price":50.0}
+   ```
+10. 验证
+    > 查看jdbc连接的数据库，会看到新建了表jdbc\_test,里面有一行数据。
+    > 当然，如果我们已经创建了该table，里面已经存在其他的数据亦无妨。只要将文件sink-quickstart-postgres.properties中的 auto.create=false即可。
 
-zookeeper 2181
-
-kafka 9020
-
-schema-register 8081
 
 
+## 各进程端口号对应
+
+| 进程 | 端口 |
+| :--- | :--- |
+| zookeeper | 2181 |
+| kafka-server | 9020 |
+| schema-register | 8081 |
+
+
+
+## Connect-jdbc导数据所采用的方式
+
+待确定
 
