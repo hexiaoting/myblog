@@ -12,4 +12,5 @@
   * [无声告白](无声告白.md)
 * [消息系统](xiao-xi-xi-tong.md)
   * [kafka对接postgres](xiao-xi-xi-tong/kafkadui-jie-postgres.md)
+  * [thrift](xiao-xi-xi-tong/thrift.md)
 
