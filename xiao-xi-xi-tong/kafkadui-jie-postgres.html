@@ -1,0 +1,503 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>kafka对接postgres · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="thrift.html" />
+    
+    
+    <link rel="prev" href="../xiao-xi-xi-tong.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../基础知识.html">
+            
+                <a href="../基础知识.html">
+            
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../编码格式.html">
+            
+                <a href="../编码格式.html">
+            
+                    
+                    编码格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../数据库.html">
+            
+                <a href="../数据库.html">
+            
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../udf持久化.html">
+            
+                <a href="../udf持久化.html">
+            
+                    
+                    UDF持久化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../2016再见，2017你好.html">
+            
+                <a href="../2016再见，2017你好.html">
+            
+                    
+                    2016再见，2017你好
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../书、电影.html">
+            
+                <a href="../书、电影.html">
+            
+                    
+                    书、电影
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../请回答1988.html">
+            
+                <a href="../请回答1988.html">
+            
+                    
+                    请回答1988
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../路边野餐.html">
+            
+                <a href="../路边野餐.html">
+            
+                    
+                    路边野餐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../无声告白.html">
+            
+                <a href="../无声告白.html">
+            
+                    
+                    无声告白
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../xiao-xi-xi-tong.html">
+            
+                <a href="../xiao-xi-xi-tong.html">
+            
+                    
+                    消息系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.6.1" data-path="kafkadui-jie-postgres.html">
+            
+                <a href="kafkadui-jie-postgres.html">
+            
+                    
+                    kafka对接postgres
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="thrift.html">
+            
+                <a href="thrift.html">
+            
+                    
+                    thrift
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >kafka对接postgres</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="kafka&#x5BF9;&#x63A5;postgres">Kafka&#x5BF9;&#x63A5;Postgres</h1>
+<p>&#x6B64;&#x6587;&#x662F;&#x4E3A;&#x4E86;&#x8BB0;&#x5F55;&#x5982;&#x4F55;&#x5C06;kafka&#x4E2D;&#x7684;&#x6570;&#x636E;&#x901A;&#x8FC7;JDBC&#x5BFC;&#x5165;&#x5230;postgres&#x4E2D;&#x3002;</p>
+<p>&#x8981;&#x9A8C;&#x8BC1;&#x4E00;&#x4E0B;&#x51E0;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
+<ol>
+<li>postgres&#x4E2D;&#x7684;&#x8868;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x82E5;&#x91CC;&#x9762;&#x8FD8;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x662F;&#x5426;&#x4F1A;&#x5F71;&#x54CD;&#x6570;&#x636E;&#x5BFC;&#x5165;&#xFF1F;</li>
+<li>&#x6570;&#x636E;&#x5BFC;&#x5165;&#x662F;&#x7528;insert&#x8FD8;&#x662F;copy&#xFF0C;&#x4EA6;&#x6216;&#x662F;&#x5176;&#x4ED6;&#x7684;&#x547D;&#x4EE4;&#x6267;&#x884C;&#xFF1F;</li>
+</ol>
+<h2 id="&#x5F00;&#x59CB;&#x6D4B;&#x8BD5;">&#x5F00;&#x59CB;&#x6D4B;&#x8BD5;</h2>
+<ol>
+<li>&#x73AF;&#x5883;&#x51C6;&#x5907;<blockquote>
+<p>&#x7531;&#x4E8E;kafka &#x5F00;&#x6E90;&#x793E;&#x533A;&#x63D0;&#x4F9B;&#x4E86;confluent-platform&#xFF0C;&#x5176;&#x4E2D;&#x5185;&#x7F6E;&#x4E86;&#x5F88;&#x591A;&#x79CD;connect,&#x5176;&#x4E2D;&#x5C31;&#x5305;&#x62EC;kafka-connect-jdbc-sink/source&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x62FF;&#x6765;&#x7528;&#xFF0C;&#x5F53;&#x524D;&#x7684;&#x6700;&#x65B0;&#x7248;&#x662F;confluent-3.2.0&#x3002;<br>kafka0.9.0.1&#x5BF9;&#x5E94;&#x7684;confluent&#x7248;&#x672C;&#x4E0D;&#x652F;&#x6301;connect-sink,&#x53EA;&#x652F;&#x6301;connect-source&#x3002; &#x76F4;&#x5230;confluent2.0.1(&#x5BF9;&#x5E94;kafka0.10.0.1)&#x624D;&#x53D1;&#x5E03;</p>
+</blockquote>
+</li>
+<li>&#x542F;&#x52A8;zookeeper<pre><code>[node1]$ ./bin/zookeeper-server-start -daemon etc/kafka/zookeeper.properties
+</code></pre></li>
+<li>&#x542F;&#x52A8;kafka<pre><code>[node1]$ ./bin/kafka-server-start -daemon etc/kafka/server.properties
+</code></pre></li>
+<li>&#x542F;&#x52A8;schema-register<pre><code>[node1]$ ./bin/schema-registry-start -daemon etc/schema-registry/schema-registry.properties
+</code></pre></li>
+<li>&#x67E5;&#x770B;&#x5F53;&#x524D;topics<pre><code>[node1]$ ./bin/kafka-topics --list --zookeeper localhost:2181
+__confluent.support.metrics
+__consumer_offsets
+_schemas
+test
+</code></pre></li>
+<li>&#x521B;&#x5EFA;topic<pre><code>[node1]$ bin/kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic jdbc_test
+Created topic &quot;jdbc_test&quot;.
+</code></pre></li>
+<li><p>&#x542F;&#x52A8;connnect-jdbc-sink</p>
+<ul>
+<li><p>&#x914D;&#x7F6E;&#x53C2;&#x6570;</p>
+<pre><code>[node1]$ cat etc/kafka-connect-jdbc/sink-quickstart-postgres.properties
+name=hwt-jdbc-pg-sink
+connector.class=io.confluent.connect.jdbc.JdbcSinkConnector
+tasks.max=1
+
+# The topics to consume from - required for sink connectors like this one
+topics=jdbc_test
+
+# Configuration specific to the JDBC sink connector.
+connection.url=jdbc:postgresql://nobida209:9700/hewenting
+connection.user=hewenting
+#connection.password=hewenting
+auto.create=true
+</code></pre></li>
+<li><p>&#x542F;&#x52A8;&#x8FDB;&#x7A0B;</p>
+</li>
+</ul>
+<pre><code>./bin/connect-standalone etc/schema-registry/connect-avro-standalone.properties etc/kafka-connect-jdbc/sink-quickstart-postgres.properties
+</code></pre></li>
+<li><p>&#x542F;&#x52A8;producer</p>
+<pre><code>./bin/kafka-avro-console-producer --broker-list localhost:9092 --topic  jdbc_test2 --property value.schema=&apos;{&quot;type&quot;:&quot;record&quot;,&quot;name&quot;:&quot;myrecord&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;int&quot;},{&quot;name&quot;:&quot;product&quot;, &quot;type&quot;: &quot;string&quot;}, {&quot;name&quot;:&quot;quantity&quot;, &quot;type&quot;: &quot;int&quot;}, {&quot;name&quot;:&quot;price&quot;, &quot;type&quot;:&quot;float&quot;}]}&apos;
+&#x542F;&#x52A8;&#x4E4B;&#x540E;&#x8F93;&#x5165;&#x6570;&#x636E;&#xFF1A;
+{&quot;id&quot;: 999, &quot;product&quot;: &quot;foo&quot;, &quot;quantity&quot;: 100, &quot;price&quot;: 50}
+</code></pre></li>
+<li>&#x542F;&#x52A8;consumer<pre><code>./bin/kafka-avro-console-consumer --topic jdbc_test --bootstrap-server localhost:9092 --from-beginning
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/hewenting/software/confluent-3.2.0/share/java/kafka-serde-tools/slf4j-log4j12-1.7.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/hewenting/software/confluent-3.2.0/share/java/schema-registry/slf4j-log4j12-1.7.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+{&quot;id&quot;:999,&quot;product&quot;:&quot;foo&quot;,&quot;quantity&quot;:100,&quot;price&quot;:50.0}
+</code></pre></li>
+<li>&#x9A8C;&#x8BC1;<blockquote>
+<p>&#x67E5;&#x770B;jdbc&#x8FDE;&#x63A5;&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x4F1A;&#x770B;&#x5230;&#x65B0;&#x5EFA;&#x4E86;&#x8868;jdbc_test,&#x91CC;&#x9762;&#x6709;&#x4E00;&#x884C;&#x6570;&#x636E;&#x3002;
+&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x4E86;&#x8BE5;table&#xFF0C;&#x91CC;&#x9762;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x5176;&#x4ED6;&#x7684;&#x6570;&#x636E;&#x4EA6;&#x65E0;&#x59A8;&#x3002;&#x53EA;&#x8981;&#x5C06;&#x6587;&#x4EF6;sink-quickstart-postgres.properties&#x4E2D;&#x7684; auto.create=false&#x5373;&#x53EF;&#x3002;</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="&#x5404;&#x8FDB;&#x7A0B;&#x7AEF;&#x53E3;&#x53F7;&#x5BF9;&#x5E94;">&#x5404;&#x8FDB;&#x7A0B;&#x7AEF;&#x53E3;&#x53F7;&#x5BF9;&#x5E94;</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x8FDB;&#x7A0B;</th>
+<th style="text-align:left">&#x7AEF;&#x53E3;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">zookeeper</td>
+<td style="text-align:left">2181</td>
+</tr>
+<tr>
+<td style="text-align:left">kafka-server</td>
+<td style="text-align:left">9020</td>
+</tr>
+<tr>
+<td style="text-align:left">schema-register</td>
+<td style="text-align:left">8081</td>
+</tr>
+</tbody>
+</table>
+<h2 id="connect-jdbc&#x5BFC;&#x6570;&#x636E;&#x6240;&#x91C7;&#x7528;&#x7684;&#x65B9;&#x5F0F;">Connect-jdbc&#x5BFC;&#x6570;&#x636E;&#x6240;&#x91C7;&#x7528;&#x7684;&#x65B9;&#x5F0F;</h2>
+<p>&#x5F85;&#x786E;&#x5B9A;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../xiao-xi-xi-tong.html" class="navigation navigation-prev " aria-label="Previous page: 消息系统">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="thrift.html" class="navigation navigation-next " aria-label="Next page: thrift">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"kafka对接postgres","level":"1.6.1","depth":2,"next":{"title":"thrift","level":"1.6.2","depth":2,"path":"xiao-xi-xi-tong/thrift.md","ref":"xiao-xi-xi-tong/thrift.md","articles":[]},"previous":{"title":"消息系统","level":"1.6","depth":1,"path":"xiao-xi-xi-tong.md","ref":"xiao-xi-xi-tong.md","articles":[{"title":"kafka对接postgres","level":"1.6.1","depth":2,"path":"xiao-xi-xi-tong/kafkadui-jie-postgres.md","ref":"xiao-xi-xi-tong/kafkadui-jie-postgres.md","articles":[]},{"title":"thrift","level":"1.6.2","depth":2,"path":"xiao-xi-xi-tong/thrift.md","ref":"xiao-xi-xi-tong/thrift.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"xiao-xi-xi-tong/kafkadui-jie-postgres.md","mtime":"2017-03-20T06:20:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-20T06:22:39.217Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
