@@ -17,6 +17,8 @@
 
 ## 搭建citus+postgres+zombodb
 
+---
+
 > citus是将pg分布式化的一个插件，主要功能是将pg上的表切分为多个分片，每个分片分散到多个worker\(一个pg进程\)上，同时可以为该表配置副本个数以保证数据的可靠性。
 >
 > citus的存在的问题包括：
@@ -29,6 +31,7 @@
 搭建环境步骤：
 
 1. 下载、安装postgres
+
    > 安装的版本为9.3，9.4，9.5均可，因为后续要用到zombodb插件，对pg的版本有要求。
 
    第一步：下载[postgres](https://www.postgresql.org/ftp/source/)
@@ -62,6 +65,7 @@
    ```
 
 2. 下载、安装citus
+
    > 要装6.0以上版本，也是为了适配zombodb插件
 
    第一步：下载citus
@@ -100,7 +104,8 @@
    ```
 
 3. 下载安装zombodb
-   > 可以[下载源码](https://github.com/zombodb/zombodb/releases/tag/v3.1.10)编译安装，可以直接下载rpm包。本文以[rpm](https://github.com/zombodb/zombodb/releases/download/v3.1.10/zombodb_centos6_pg95-3.1.10-1.x86_64.rpm)包为例。
+
+   > 可以[下载源码](https://github.com/zombodb/zombodb/releases/tag/v3.1.10)编译安装，可以直接下载rpm包。本文以[rpm](https://github.com/zombodb/zombodb/releases/download/v3.1.10/zombodb_centos6_pg95-3.1.10-1.x86_64.rpm)包为例。  
    > 注：若下载源码编译安装，则要注意libcurl得是7.42.2以上版本。
 
    第一步：下载编译安装\(citus集群的每个postgres都要安装如下执行\)
@@ -119,12 +124,21 @@
    $ psql -p 9999 -d $DATABASE_NAME -c "CREATE EXTENSION zombodb;"
    ```
 
-   第二步：测试（参照zombodb给的[tutorial](https://github.com/zombodb/zombodb/blob/master/TUTORIAL.md)）
+   第二步：测试（参照zombodb给的[tutorial](https://github.com/zombodb/zombodb/blob/master/TUTORIAL.md)）  
    注：要安装elastic search且添加plugin及更新配置后才行。
 
+### 
 
+### 遗留问题
 
+---
 
+* [ ] zombodb的tutorial中给的zdb\_tally为何在我的环境中返回空？
+  ```
+  SELECT * FROM zdb_tally('products', 'keywords', '^.*', '', 5000, 'term');
+  ```
+* [ ] drop index为何es上的index没有drop掉，这会导致在es上残留很多垃圾数据？
+* [ ] zombodb对于中文分词只能是单字，无法识别词组。得用到es的其他analyzer如ik\_smart，其中zombodb对接es的原理是怎样的?
 
 
 
