@@ -13,8 +13,6 @@
 | [zombodb](https://github.com/zombodb/zombodb) | ZomboDB is a Postgres extension that enables efficient full-text searching via the use of indexes backed by Elasticsearch. |
 | [elasticsearch](https://github.com/elastic/elasticsearch) | Elasticsearch is a distributed RESTful search engine built for the cloud |
 
-
-
 ## 搭建citus+postgres+zombodb
 
 ---
@@ -44,7 +42,7 @@
    第二步：编译安装
 
        cd postgresql-9.5.0
-       ./configure --prefix=`pwd`/build      #安装到当前build目录下
+       ./configure --prefix=`pwd`/build CFLAGS="-g -O2"     #安装到当前build目录下
        make -j 24
        make install
        export PATH=`pwd`/build/bin:$PATH     #把新安装的bin加入到PATH中
