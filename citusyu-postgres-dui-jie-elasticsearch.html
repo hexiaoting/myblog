@@ -1,0 +1,547 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>citus与postgres对接elasticsearch · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2016再见，2017你好.html" />
+    
+    
+    <link rel="prev" href="udf持久化.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="基础知识.html">
+            
+                <a href="基础知识.html">
+            
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="编码格式.html">
+            
+                <a href="编码格式.html">
+            
+                    
+                    编码格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="数据库.html">
+            
+                <a href="数据库.html">
+            
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="udf持久化.html">
+            
+                <a href="udf持久化.html">
+            
+                    
+                    UDF持久化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="citusyu-postgres-dui-jie-elasticsearch.html">
+            
+                <a href="citusyu-postgres-dui-jie-elasticsearch.html">
+            
+                    
+                    citus与postgres对接elasticsearch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2016再见，2017你好.html">
+            
+                <a href="2016再见，2017你好.html">
+            
+                    
+                    2016再见，2017你好
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="书、电影.html">
+            
+                <a href="书、电影.html">
+            
+                    
+                    书、电影
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="请回答1988.html">
+            
+                <a href="请回答1988.html">
+            
+                    
+                    请回答1988
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="路边野餐.html">
+            
+                <a href="路边野餐.html">
+            
+                    
+                    路边野餐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="无声告白.html">
+            
+                <a href="无声告白.html">
+            
+                    
+                    无声告白
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="xiao-xi-xi-tong.html">
+            
+                <a href="xiao-xi-xi-tong.html">
+            
+                    
+                    消息系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="xiao-xi-xi-tong/kafkadui-jie-postgres.html">
+            
+                <a href="xiao-xi-xi-tong/kafkadui-jie-postgres.html">
+            
+                    
+                    kafka对接postgres
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="xiao-xi-xi-tong/thrift.html">
+            
+                <a href="xiao-xi-xi-tong/thrift.html">
+            
+                    
+                    thrift
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >citus与postgres对接elasticsearch</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="cituspostgreselasticsearchzombodb">Citus+Postgres+ElasticSearch+zombodb</h1>
+<p>&#x5728;&#x505A;&#x8206;&#x60C5;&#x5206;&#x6790;&#x65F6;&#xFF0C;&#x7ECF;&#x5E38;&#x7528;&#x5230;ElasticSearch&#x53CA;mongedb&#x3002;ES&#x7684;&#x5168;&#x6587;&#x68C0;&#x7D22;&#x975E;&#x5E38;&#x725B;&#x903C;&#xFF0C;&#x4F46;&#x8FD9;&#x4E24;&#x8005;&#x6709;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#x5BF9;&#x590D;&#x6742;join&#x7684;&#x67E5;&#x8BE2;&#x652F;&#x6301;&#x7684;&#x4E0D;&#x597D;&#xFF0C;&#x540C;&#x65F6;&#xFF0C;mongodb&#x7279;&#x522B;&#x5403;&#x5185;&#x5B58;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x51FA;&#x4E00;&#x79CD;&#x65B0;&#x7684;&#x65B9;&#x6848;&#x662F;&#x628A;mongodb&#x66FF;&#x6362;&#x6389;&#xFF0C;&#x6362;&#x4E3A;&#x5206;&#x5E03;&#x5F0F;&#x7684;postgres&#xFF0C;&#x5373;citus+postgres&#x6216;greenplum&#x3002;&#x4F46;&#x662F;&#x5168;&#x6587;&#x68C0;&#x7D22;&#x4ECD;&#x65E7;&#x7528;elasticsearch&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x8003;&#x8651;&#x6570;&#x636E;&#x5982;&#x4F55;&#x5B58;&#x50A8;&#xFF0C;&#x7406;&#x60F3;&#x7684;&#x60C5;&#x51B5;&#x662F;&#x6570;&#x636E;&#x53EA;&#x5B58;&#x50A8;&#x4E00;&#x4EFD;&#xFF0C;&#x5373;&#x6570;&#x636E;&#x5B58;&#x5230;pg&#x4E2D;&#xFF0C;&#x7D22;&#x5F15;&#x4FE1;&#x606F;&#x5B58;&#x5230;es&#x4E2D;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x5C31;&#x5F15;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;pg&#x63D2;&#x4EF6;zombodb&#xFF0C;&#x4E13;&#x95E8;&#x4E3A;&#x6B64;&#x800C;&#x751F;&#xFF0C;&#x4E14;&#x548C;citus&#x9002;&#x914D;&#x826F;&#x597D;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x7EC4;&#x4EF6;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/postgres/postgres" target="_blank">postgres</a></td>
+<td style="text-align:left">&#x5355;&#x673A;RDBMS</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/citusdata" target="_blank">citus</a></td>
+<td style="text-align:left">Citus is a distributed database that scales across commodity servers using transparent sharding and replication</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/zombodb/zombodb" target="_blank">zombodb</a></td>
+<td style="text-align:left">ZomboDB is a Postgres extension that enables efficient full-text searching via the use of indexes backed by Elasticsearch.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/elastic/elasticsearch" target="_blank">elasticsearch</a></td>
+<td style="text-align:left">Elasticsearch is a distributed RESTful search engine built for the cloud</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x642D;&#x5EFA;cituspostgreszombodb">&#x642D;&#x5EFA;citus+postgres+zombodb</h2>
+<hr>
+<blockquote>
+<p>citus&#x662F;&#x5C06;pg&#x5206;&#x5E03;&#x5F0F;&#x5316;&#x7684;&#x4E00;&#x4E2A;&#x63D2;&#x4EF6;&#xFF0C;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x662F;&#x5C06;pg&#x4E0A;&#x7684;&#x8868;&#x5207;&#x5206;&#x4E3A;&#x591A;&#x4E2A;&#x5206;&#x7247;&#xFF0C;&#x6BCF;&#x4E2A;&#x5206;&#x7247;&#x5206;&#x6563;&#x5230;&#x591A;&#x4E2A;worker(&#x4E00;&#x4E2A;pg&#x8FDB;&#x7A0B;)&#x4E0A;&#xFF0C;&#x540C;&#x65F6;&#x53EF;&#x4EE5;&#x4E3A;&#x8BE5;&#x8868;&#x914D;&#x7F6E;&#x526F;&#x672C;&#x4E2A;&#x6570;&#x4EE5;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x7684;&#x53EF;&#x9760;&#x6027;&#x3002;</p>
+<p>citus&#x7684;&#x5B58;&#x5728;&#x7684;&#x95EE;&#x9898;&#x5305;&#x62EC;&#xFF1A;</p>
+<ol>
+<li>master&#x5B58;&#x5728;&#x5355;&#x70B9;&#x74F6;&#x9888;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6CA1;&#x6709;standy&#xFF0C;&#x82E5;&#x914D;&#x4E0A;pg&#x7684;HA&#xFF0C;&#x90A3;standy&#x662F;&#x53EA;&#x8BFB;&#x6A21;&#x5F0F;&#xFF1B;</li>
+<li>&#x652F;&#x6301;&#x7684;join&#x6709;&#x9650;&#xFF0C;&#x590D;&#x6742;&#x70B9;&#x7684;&#x67E5;&#x8BE2;&#x5982;&#x5305;&#x62EC;&#x5B50;&#x94FE;&#x63A5;&#x3001;&#x5B50;&#x67E5;&#x8BE2;&#x4E4B;&#x7C7B;&#x7684;&#x5C31;&#x76F4;&#x63A5;&#x62A5;&#x9519;&#x4E0D;&#x652F;&#x6301;&#xFF1B;&#x800C;&#x4E14;&#x6027;&#x80FD;&#x6BD4;&#x8F83;&#x5DEE;&#xFF0C;&#x9664;&#x4E86;colocate&#x7684;&#x4E4B;&#x5916;&#xFF0C;&#x5176;&#x4ED6;&#x7684;join&#x6267;&#x884C;&#x90FD;&#x4F1A;&#x628A;&#x4E24;&#x4E2A;&#x8868;&#x7684;&#x6570;&#x636E;&#x62C9;&#x5230;master&#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x518D;&#x5728;master&#x8282;&#x70B9;&#x6267;&#x884C;join&#xFF1B;</li>
+<li>&#x5F00;&#x6E90;&#x7248;&#x672C;&#x4E0D;&#x652F;&#x6301;&#x6570;&#x636E;&#x7684;rebalance;</li>
+<li>&#x4E0D;&#x652F;&#x6301;&#x8282;&#x70B9;&#x7684;&#x52A8;&#x6001;&#x4E0A;&#x4E0B;&#x7EBF;&#x3002;</li>
+</ol>
+</blockquote>
+<p>&#x642D;&#x5EFA;&#x73AF;&#x5883;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ol>
+<li><p>&#x4E0B;&#x8F7D;&#x3001;&#x5B89;&#x88C5;postgres</p>
+<blockquote>
+<p>&#x5B89;&#x88C5;&#x7684;&#x7248;&#x672C;&#x4E3A;9.3&#xFF0C;9.4&#xFF0C;9.5&#x5747;&#x53EF;&#xFF0C;&#x56E0;&#x4E3A;&#x540E;&#x7EED;&#x8981;&#x7528;&#x5230;zombodb&#x63D2;&#x4EF6;&#xFF0C;&#x5BF9;pg&#x7684;&#x7248;&#x672C;&#x6709;&#x8981;&#x6C42;&#x3002;</p>
+</blockquote>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x4E0B;&#x8F7D;<a href="https://www.postgresql.org/ftp/source/" target="_blank">postgres</a></p>
+<pre><code>wget https://ftp.postgresql.org/pub/source/v9.5.0/postgresql-9.5.0.tar.bz2
+tar -zxvf postgresql-9.5.0.tar.bz2
+</code></pre><p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;</p>
+<pre><code>cd postgresql-9.5.0
+./configure --prefix=`pwd`/build      #&#x5B89;&#x88C5;&#x5230;&#x5F53;&#x524D;build&#x76EE;&#x5F55;&#x4E0B;
+make -j 24
+make install
+export PATH=`pwd`/build/bin:$PATH     #&#x628A;&#x65B0;&#x5B89;&#x88C5;&#x7684;bin&#x52A0;&#x5165;&#x5230;PATH&#x4E2D;
+
+pg_ctl init -D `pwd`/build/data
+&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;`pwd`/build/data/pg_hba.conf:&#x6DFB;&#x52A0;&#x4E00;&#x884C;host all all 0.0.0.0/0 trust&#x8FD9;&#x6837;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x624D;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;pg
+&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;`pwd`/build/data/postgresql.conf:&#x4FEE;&#x6539;listen_addresss=&apos;*&apos;,port=9999 #&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E3A;&#x5176;&#x4ED6;&#x7AEF;&#x53E3;&#x53F7;
+pg_ctl start -D `pwd`/build/data -l `pwd`/build/logfile
+</code></pre><p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x6D4B;&#x8BD5;</p>
+<pre><code>psql -p 9999 -d template1  #&#x6210;&#x529F;
+template1=#                #&#x652F;&#x6301;\l&#x67E5;&#x770B;&#x6240;&#x6709;&#x6570;&#x636E;&#x5E93;, \d&#x67E5;&#x770B;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6240;&#x6709;&#x8868;
+
+&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x6570;&#x636E;&#x5E93;
+create database test;      #&#x6210;&#x529F;&#xFF0C;&#x6267;&#x884C;\l&#x591A;&#x4E86;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#xFF0C;\c test&#x5207;&#x6362;&#x6570;&#x636E;&#x5E93;
+</code></pre></li>
+<li><p>&#x4E0B;&#x8F7D;&#x3001;&#x5B89;&#x88C5;citus</p>
+<blockquote>
+<p>&#x8981;&#x88C5;6.0&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#xFF0C;&#x4E5F;&#x662F;&#x4E3A;&#x4E86;&#x9002;&#x914D;zombodb&#x63D2;&#x4EF6;</p>
+</blockquote>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x4E0B;&#x8F7D;citus</p>
+<pre><code>wget https://github.com/citusdata/citus/archive/master.zip
+unzip master.zip
+</code></pre><p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;</p>
+<pre><code>./configure         #&#x6267;&#x884C;pg_config&#x786E;&#x8BA4;postgres&#x7684;&#x4FE1;&#x606F;&#x662F;&#x5426;&#x6B63;&#x786E;
+make
+make install
+vim $PGDIR/data/postgresql.conf &#x8BBE;&#x7F6E;shared_preload_libraries = &apos;citus&apos;
+
+#cluster&#x642D;&#x5EFA;&#xFF0C;&#x53C2;&#x8003;citus&#x96C6;&#x7FA4;&#x642D;&#x5EFA;&#x94FE;&#x63A5;&#xFF1A;https://docs.citusdata.com/en/v6.1/installation/single_machine_rhel.html
+&#x5C06;&#x4E0A;&#x8FF0;&#x5904;&#x7406;&#x8FC7;&#x4E4B;&#x540E;&#x7684;pg&#x62F7;&#x8D1D;&#x5230;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x4F5C;&#x4E3A;worker&#xFF0C;&#x91CD;&#x542F;&#x6240;&#x6709;&#x7684;postgres&#x8FDB;&#x7A0B;
+psql -p 9999
+&#x6267;&#x884C;CREATE EXTENSION citus;
+
+#&#x5728;master&#x8282;&#x70B9;&#x589E;&#x52A0;worker:
+SELECT * from master_add_node(&apos;$WORKERNODE_IP&apos;, 9999);
+</code></pre><p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x6D4B;&#x8BD5;(&#x6240;&#x6709;&#x7684;&#x8BF7;&#x6C42;&#x90FD;&#x53D1;&#x7ED9;master)</p>
+<pre><code>#&#x67E5;&#x770B;cluster&#x7684;worker&#x60C5;&#x51B5;&#xFF1A;
+psql -p 9999 -c &quot;select * from master_get_active_worker_nodes();&quot;
+
+#&#x521B;&#x5EFA;&#x5206;&#x5E03;&#x5F0F;&#x8868;
+create table t(id int, name text);
+select master_create_distributed_table(&apos;t&apos;, &apos;id&apos;); #&#x8868;&#x793A;&#x5C06;&#x8868;&apos;t&apos;&#x5B89;&#x88C5;&apos;id&apos;&#x8FDB;&#x884C;&#x5206;&#x7247;&#xFF0C;&#x9ED8;&#x8BA4;&#x5206;&#x7247;&#x4E2A;&#x6570;32&#x4E2A;&#xFF0C;&#x526F;&#x672C;&#x4E3A;1.
+</code></pre></li>
+<li><p>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;zombodb</p>
+<blockquote>
+<p>&#x53EF;&#x4EE5;<a href="https://github.com/zombodb/zombodb/releases/tag/v3.1.10" target="_blank">&#x4E0B;&#x8F7D;&#x6E90;&#x7801;</a>&#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4E0B;&#x8F7D;rpm&#x5305;&#x3002;&#x672C;&#x6587;&#x4EE5;<a href="https://github.com/zombodb/zombodb/releases/download/v3.1.10/zombodb_centos6_pg95-3.1.10-1.x86_64.rpm" target="_blank">rpm</a>&#x5305;&#x4E3A;&#x4F8B;&#x3002;<br>&#x6CE8;&#xFF1A;&#x82E5;&#x4E0B;&#x8F7D;&#x6E90;&#x7801;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#xFF0C;&#x5219;&#x8981;&#x6CE8;&#x610F;libcurl&#x5F97;&#x662F;7.42.2&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x3002;</p>
+</blockquote>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x4E0B;&#x8F7D;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;(citus&#x96C6;&#x7FA4;&#x7684;&#x6BCF;&#x4E2A;postgres&#x90FD;&#x8981;&#x5B89;&#x88C5;&#x5982;&#x4E0B;&#x6267;&#x884C;)</p>
+<pre><code>wget https://github.com/zombodb/zombodb/releases/download/v3.1.10/zombodb_centos6_pg95-3.1.10-1.x86_64.rpm
+rpm -Uvh zombodb_centos6_pg95-3.1.10-1.x86_64.rpm
+
+#&#x4FEE;&#x6539;pg&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;postgresql.conf
+&#x589E;&#x52A0;&#x8FD9;&#x884C;&#xFF1A;local_preload_libraries = &apos;zombodb.so&apos;
+
+#&#x91CD;&#x65B0;&#x542F;&#x52A8;postgres
+pg_ctl restart -D $PG_DATADIR -l logfile
+
+#&#x65B0;&#x5EFA;extension
+$ psql -p 9999 -d $DATABASE_NAME -c &quot;CREATE EXTENSION zombodb;&quot;
+</code></pre><p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x6D4B;&#x8BD5;&#xFF08;&#x53C2;&#x7167;zombodb&#x7ED9;&#x7684;<a href="https://github.com/zombodb/zombodb/blob/master/TUTORIAL.md" target="_blank">tutorial</a>&#xFF09;<br>&#x6CE8;&#xFF1A;&#x8981;&#x5B89;&#x88C5;elastic search&#x4E14;&#x6DFB;&#x52A0;plugin&#x53CA;&#x66F4;&#x65B0;&#x914D;&#x7F6E;&#x540E;&#x624D;&#x884C;&#x3002;</p>
+</li>
+</ol>
+<h3 id=""> </h3>
+<h3 id="&#x9057;&#x7559;&#x95EE;&#x9898;">&#x9057;&#x7559;&#x95EE;&#x9898;</h3>
+<hr>
+<ul>
+<li>[ ] zombodb&#x7684;tutorial&#x4E2D;&#x7ED9;&#x7684;zdb_tally&#x4E3A;&#x4F55;&#x5728;&#x6211;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#x8FD4;&#x56DE;&#x7A7A;&#xFF1F;<pre><code>SELECT * FROM zdb_tally(&apos;products&apos;, &apos;keywords&apos;, &apos;^.*&apos;, &apos;&apos;, 5000, &apos;term&apos;);
+</code></pre></li>
+<li>[ ] drop index&#x4E3A;&#x4F55;es&#x4E0A;&#x7684;index&#x6CA1;&#x6709;drop&#x6389;&#xFF0C;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x5728;es&#x4E0A;&#x6B8B;&#x7559;&#x5F88;&#x591A;&#x5783;&#x573E;&#x6570;&#x636E;&#xFF1F;</li>
+<li>[ ] zombodb&#x5BF9;&#x4E8E;&#x4E2D;&#x6587;&#x5206;&#x8BCD;&#x53EA;&#x80FD;&#x662F;&#x5355;&#x5B57;&#xFF0C;&#x65E0;&#x6CD5;&#x8BC6;&#x522B;&#x8BCD;&#x7EC4;&#x3002;&#x5F97;&#x7528;&#x5230;es&#x7684;&#x5176;&#x4ED6;analyzer&#x5982;ik_smart&#xFF0C;&#x5176;&#x4E2D;zombodb&#x5BF9;&#x63A5;es&#x7684;&#x539F;&#x7406;&#x662F;&#x600E;&#x6837;&#x7684;?</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="udf持久化.html" class="navigation navigation-prev " aria-label="Previous page: UDF持久化">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2016再见，2017你好.html" class="navigation navigation-next " aria-label="Next page: 2016再见，2017你好">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"citus与postgres对接elasticsearch","level":"1.3.2","depth":2,"next":{"title":"2016再见，2017你好","level":"1.4","depth":1,"path":"2016再见，2017你好.md","ref":"2016再见，2017你好.md","articles":[]},"previous":{"title":"UDF持久化","level":"1.3.1","depth":2,"path":"udf持久化.md","ref":"udf持久化.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"citusyu-postgres-dui-jie-elasticsearch.md","mtime":"2017-03-21T14:45:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-21T14:48:13.912Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
