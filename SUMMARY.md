@@ -3,6 +3,8 @@
 * [Introduction](README.md)
 * [基础知识](基础知识.md)
   * [编码格式](编码格式.md)
+  * [工具集](gong-ju-ji.md)
+    * [tcpreplay](gong-ju-ji/tcpreplay.md)
 * [数据库](数据库.md)
   * [UDF持久化](udf持久化.md)
   * [citus与postgres对接elasticsearch](citusyu-postgres-dui-jie-elasticsearch.md)
