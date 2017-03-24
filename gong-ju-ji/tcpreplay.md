@@ -108,17 +108,18 @@ Statistics for network device: em1
 Actual: 242 packets (33882 bytes) sent in 0.000287 seconds.
 Rated: 118055700.0 Bps, 944.44 Mbps, 843205.57 pps
 Statistics for network device: em1
-	Successful packets:        242
-	Failed packets:            0
-	Truncated packets:         0
-	Retried packets (ENOBUFS): 0
-	Retried packets (EAGAIN):  0
+    Successful packets:        242
+    Failed packets:            0
+    Truncated packets:         0
+    Retried packets (ENOBUFS): 0
+    Retried packets (EAGAIN):  0
 [root@nobida209 bin]#
 ```
 
 ## 待确定问题
 
 > 1. tcpreplay发包不指定发往何处吗？还是会解析包里头的目的ip，然后发往这个目的ip?
+>    1. 答：不用指定发往哪个目的地，因为是广播的。
 > 2. 网上抓好的pcap包，如何在两个节点之间用tcpreplay传输？
 
 
