@@ -67,6 +67,47 @@
    ./bin/connect-standalone etc/schema-registry/connect-avro-standalone.properties etc/kafka-connect-jdbc/sink-quickstart-postgres.properties
    ```
 
+   * 用distributed模式
+
+   ```
+   ./bin/connect-distributed etc/schema-registry/connect-avro-distributed.properties
+   ```
+
+   > 用curl发送POST请求，发给端口8083\(即刚才启动的connect-distributed进程\)，设置配置信息。
+   >
+   > ```
+   > curl -X POST -H "Content-Type: application/json" 
+   >      --data '{ "name": "test-sink-aabbcc", 
+   >                "config": {
+   >                          "connector.class":"io.confluent.connect.jdbc.JdbcSinkConnector", 
+   >                          "tasks.max":"1", 
+   >                          "connection.url":"jdbc:postgresql://nobida209:9700/hewenting",
+   >                          "topics":"jdbc_test",
+   >                          "auto.create":"true" 
+   >                          }
+   >                }' 
+   >      http://localhost:8083/connectors
+   >
+   > curl -X POST -H "Content-Type: application/json" 
+   >      --data '{ "name": "test-sqlite-jdbc-autoincrement", 
+   >                "config": {
+   >                          "connector.class":"io.confluent.connect.jdbc.JdbcSourceConnector", 
+   >                          "tasks.max":"1", 
+   >                          "connection.url":"jdbc:sqlite:test1.db",
+   >                          "mode":"incrementing",
+   >                          "incrementing.column.name":"id",
+   >                          "topic.prefix":"sink-"       #含义为:读取test1.db下的所有表，每个表对应一个topic, 如表a的topic为sink-a。
+   >                          }
+   >                }' 
+   >      http://localhost:8083/connectors
+   > ```
+
+   同时，可以查看当前有哪些task:     
+
+   ```
+   curl -X GET http://localhost:8083/connectors/
+   ```
+
 8. 启动producer
 
    ```
@@ -76,6 +117,7 @@
    ```
 
 9. 启动consumer
+
    ```
    ./bin/kafka-avro-console-consumer --topic jdbc_test --bootstrap-server localhost:9092 --from-beginning
    SLF4J: Class path contains multiple SLF4J bindings.
@@ -85,6 +127,7 @@
    SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
    {"id":999,"product":"foo","quantity":100,"price":50.0}
    ```
+
 10. 验证
     > 查看jdbc连接的数据库，会看到新建了表jdbc\_test,里面有一行数据。  
     > 当然，如果我们已经创建了该table，里面已经存在其他的数据亦无妨。只要将文件sink-quickstart-postgres.properties中的 auto.create=false即可。
@@ -107,7 +150,7 @@
 >
 > 也可以配置为upsert。
 >
-> 参考链接：https://github.com/confluentinc/kafka-connect-jdbc/blob/master/docs/sink\_connector.rst
+> 参考链接：[https://github.com/confluentinc/kafka-connect-jdbc/blob/master/docs/sink\_connector.rst](https://github.com/confluentinc/kafka-connect-jdbc/blob/master/docs/sink_connector.rst)
 
 ## 做ETL
 
