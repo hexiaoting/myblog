@@ -18,6 +18,8 @@
 > -L, --limit=num            Limit the number of packets to send 限制发包个数
 >
 > -p: --pps=num              Replay packets at a given packets/sec指定每秒的发包速度
+>
+> -M, --mbps=str             Replay packets at a given Mbps指定发包速率
 
 例子1：
 
@@ -91,7 +93,22 @@ File Cache is enabled
 Actual: 726 packets (101646 bytes) sent in 7.02 seconds.
 Rated: 14000.0 Bps, 0.112 Mbps, 100.13 pps
 Statistics for network device: em1
-	Successful packets:        726
+    Successful packets:        726
+    Failed packets:            0
+    Truncated packets:         0
+    Retried packets (ENOBUFS): 0
+    Retried packets (EAGAIN):  0
+[root@nobida209 bin]#
+```
+
+例子6：指定发包速度，Mbps【-M 1000】,这个参数和-t是冲突的
+
+```
+[root@nobida209 bin]# ./tcpreplay -i em1 -M 1000  /home/hewenting/pcap/ts01-cap_dns_v6.pcap
+Actual: 242 packets (33882 bytes) sent in 0.000287 seconds.
+Rated: 118055700.0 Bps, 944.44 Mbps, 843205.57 pps
+Statistics for network device: em1
+	Successful packets:        242
 	Failed packets:            0
 	Truncated packets:         0
 	Retried packets (ENOBUFS): 0
