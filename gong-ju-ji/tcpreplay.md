@@ -121,6 +121,7 @@ Statistics for network device: em1
 > 1. tcpreplay发包不指定发往何处吗？还是会解析包里头的目的ip，然后发往这个目的ip?
 >    1. 答：不用指定发往哪个目的地，因为是广播的。
 > 2. 网上抓好的pcap包，如何在两个节点之间用tcpreplay传输？
+>    1. tcpreplay -i   网口如eth0  -M 1000 data.pcap
 
 
 
