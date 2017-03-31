@@ -17,4 +17,6 @@
 * [消息系统](xiao-xi-xi-tong.md)
   * [kafka对接postgres](xiao-xi-xi-tong/kafkadui-jie-postgres.md)
   * [thrift](xiao-xi-xi-tong/thrift.md)
+* [机器学习人工智能](ji-qi-xue-xi-ren-gong-zhi-neng.md)
+  * [概念，关系](ji-qi-xue-xi-ren-gong-zhi-neng/gai-nian-ff0c-guan-xi.md)
 
