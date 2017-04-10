@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>thrift · GitBook</title>
+        <title>tcpreplay · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../ji-qi-xue-xi-ren-gong-zhi-neng.html" />
+    <link rel="next" href="wang-luo.html" />
     
     
-    <link rel="prev" href="kafkadui-jie-postgres.html" />
+    <link rel="prev" href="../gong-ju-ji.html" />
     
 
     </head>
@@ -143,9 +143,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="../gong-ju-ji/tcpreplay.html">
+        <li class="chapter active" data-level="1.2.2.1" data-path="tcpreplay.html">
             
-                <a href="../gong-ju-ji/tcpreplay.html">
+                <a href="tcpreplay.html">
             
                     
                     tcpreplay
@@ -156,9 +156,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.2" data-path="../gong-ju-ji/wang-luo.html">
+        <li class="chapter " data-level="1.2.2.2" data-path="wang-luo.html">
             
-                <a href="../gong-ju-ji/wang-luo.html">
+                <a href="wang-luo.html">
             
                     
                     网络
@@ -309,9 +309,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="kafkadui-jie-postgres.html">
+        <li class="chapter " data-level="1.6.1" data-path="../xiao-xi-xi-tong/kafkadui-jie-postgres.html">
             
-                <a href="kafkadui-jie-postgres.html">
+                <a href="../xiao-xi-xi-tong/kafkadui-jie-postgres.html">
             
                     
                     kafka对接postgres
@@ -322,9 +322,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.2" data-path="thrift.html">
+        <li class="chapter " data-level="1.6.2" data-path="../xiao-xi-xi-tong/thrift.html">
             
-                <a href="thrift.html">
+                <a href="../xiao-xi-xi-tong/thrift.html">
             
                     
                     thrift
@@ -402,7 +402,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >thrift</a>
+        <a href=".." >tcpreplay</a>
     </h1>
 </div>
 
@@ -417,7 +417,102 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>thrift&#x67B6;&#x6784;&#x8BF4;&#x660E;</p>
+                                <h1 id="tcpreplay&#x7528;&#x4E8E;&#x53D1;&#x5305;&#x7684;&#x5DE5;&#x5177;">Tcpreplay&#x7528;&#x4E8E;&#x53D1;&#x5305;&#x7684;&#x5DE5;&#x5177;</h1>
+<p>&#x5E38;&#x7528;&#x547D;&#x4EE4;</p>
+<pre><code>./tcpreplay -i em1 -t -K -l 2 --unique-ip /home/hewenting/ts01-cap_dns_v6.pcap
+</code></pre><blockquote>
+<p>-i:  Client to server/RX/primary traffic output interface&#x6307;&#x5B9A;&#x8F93;&#x51FA;&#x7684;&#x7F51;&#x5361;<br>-t: topspeed, Replay packets as fast as possible &#x5C3D;&#x53EF;&#x80FD;&#x5FEB;&#x7684;&#x53D1;&#x5305;</p>
+<p>-K: --preload-pcap         Preloads packets into RAM before sending&#x5148;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;</p>
+<p>-l: --loop=num             Loop through the capture file X times&#x5FAA;&#x73AF;&#x6B21;&#x6570;</p>
+<p>--unique-ip:  Modify IP addresses each loop iteration to generate unique flows&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x53D1;&#x5305;&#x6539;&#x53D8;ip&#x5730;&#x5740;</p>
+<p>-L, --limit=num            Limit the number of packets to send &#x9650;&#x5236;&#x53D1;&#x5305;&#x4E2A;&#x6570;</p>
+<p>-p: --pps=num              Replay packets at a given packets/sec&#x6307;&#x5B9A;&#x6BCF;&#x79D2;&#x7684;&#x53D1;&#x5305;&#x901F;&#x5EA6;</p>
+<p>-M, --mbps=str             Replay packets at a given Mbps&#x6307;&#x5B9A;&#x53D1;&#x5305;&#x901F;&#x7387;</p>
+</blockquote>
+<p>&#x4F8B;&#x5B50;1&#xFF1A;</p>
+<pre><code>[root@nobida209 bin]# ./tcpreplay -i em1 -t -K /home/hewenting/ts01-cap_dns_v6.pcap
+File Cache is enabled
+Actual: 242 packets (33882 bytes) sent in 0.000244 seconds.
+Rated: 138860600.0 Bps, 1110.88 Mbps, 991803.27 pps
+Statistics for network device: em1
+    Successful packets:        242
+    Failed packets:            0
+    Truncated packets:         0
+    Retried packets (ENOBUFS): 0
+    Retried packets (EAGAIN):  0
+[root@nobida209 bin]#
+</code></pre><p>&#x4F8B;&#x5B50;2&#xFF1A;&#x5FAA;&#x73AF;&#x53D1;&#x5305;&#xFF0C;&#x5FAA;&#x73AF;2&#x6B21;&#x3010;-l 2&#x3011;</p>
+<pre><code>[root@nobida209 bin]# ./tcpreplay -i em1 -t -K -l 2 /home/hewenting/ts01-cap_dns_v6.pcap
+File Cache is enabled
+Actual: 484 packets (67764 bytes) sent in 0.000357 seconds.
+Rated: 189815100.0 Bps, 1518.52 Mbps, 1355742.29 pps
+Statistics for network device: em1
+    Successful packets:        484
+    Failed packets:            0
+    Truncated packets:         0
+    Retried packets (ENOBUFS): 0
+    Retried packets (EAGAIN):  0
+[root@nobida209 bin]#
+</code></pre><p>&#x4F8B;&#x5B50;3&#xFF1A;&#x5FAA;&#x73AF;&#x4F7F;&#x5F97;ip&#x552F;&#x4E00;&#x3010;--unique-ip&#x3011;</p>
+<pre><code>[root@nobida209 bin]# ./tcpreplay -i em1 -t -K -l 2 --unique-ip /home/hewenting/ts01-cap_dns_v6.pcap
+File Cache is enabled
+Actual: 484 packets (67764 bytes) sent in 0.000349 seconds.
+Rated: 194166100.0 Bps, 1553.32 Mbps, 1386819.48 pps
+Statistics for network device: em1
+    Successful packets:        484
+    Failed packets:            0
+    Truncated packets:         0
+    Retried packets (ENOBUFS): 0
+    Retried packets (EAGAIN):  0
+[root@nobida209 bin]#
+</code></pre><p>&#x4F8B;&#x5B50;4&#xFF1A;&#x9650;&#x5236;&#x53D1;&#x5305;&#x4E2A;&#x6570;&#x3010;-L 2&#x3011;</p>
+<pre><code>[root@nobida209 bin]# ./tcpreplay -i em1 -t -K -L 2  /home/hewenting/ts01-cap_dns_v6.pcap
+File Cache is enabled
+Actual: 2 packets (256 bytes) sent in 0.000010 seconds.
+Rated: 25600000.0 Bps, 204.80 Mbps, 200000.00 pps
+Statistics for network device: em1
+    Successful packets:        2
+    Failed packets:            0
+    Truncated packets:         0
+    Retried packets (ENOBUFS): 0
+    Retried packets (EAGAIN):  0
+[root@nobida209 bin]#
+</code></pre><p>&#x4F8B;&#x5B50;5&#xFF1A;&#x6307;&#x5B9A;&#x53D1;&#x5305;&#x901F;&#x5EA6;&#xFF0C;&#x6BCF;&#x79D2;&#x591A;&#x5C11;&#x4E2A;&#x5305;&#x3010;-p 100&#x3011;,&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x548C;-t&#x662F;&#x51B2;&#x7A81;&#x7684;</p>
+<pre><code>[root@nobida209 bin]# ./tcpreplay  -i em1  -K -p 100 -l 3  /home/hewenting/ts01-cap_dns_v6.pcap
+File Cache is enabled
+Actual: 726 packets (101646 bytes) sent in 7.02 seconds.
+Rated: 14000.0 Bps, 0.112 Mbps, 100.13 pps
+Statistics for network device: em1
+    Successful packets:        726
+    Failed packets:            0
+    Truncated packets:         0
+    Retried packets (ENOBUFS): 0
+    Retried packets (EAGAIN):  0
+[root@nobida209 bin]#
+</code></pre><p>&#x4F8B;&#x5B50;6&#xFF1A;&#x6307;&#x5B9A;&#x53D1;&#x5305;&#x901F;&#x5EA6;&#xFF0C;Mbps&#x3010;-M 1000&#x3011;,&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x548C;-t&#x662F;&#x51B2;&#x7A81;&#x7684;</p>
+<pre><code>[root@nobida209 bin]# ./tcpreplay -i em1 -M 1000  /home/hewenting/pcap/ts01-cap_dns_v6.pcap
+Actual: 242 packets (33882 bytes) sent in 0.000287 seconds.
+Rated: 118055700.0 Bps, 944.44 Mbps, 843205.57 pps
+Statistics for network device: em1
+    Successful packets:        242
+    Failed packets:            0
+    Truncated packets:         0
+    Retried packets (ENOBUFS): 0
+    Retried packets (EAGAIN):  0
+[root@nobida209 bin]#
+</code></pre><h2 id="&#x5F85;&#x786E;&#x5B9A;&#x95EE;&#x9898;">&#x5F85;&#x786E;&#x5B9A;&#x95EE;&#x9898;</h2>
+<blockquote>
+<ol>
+<li>tcpreplay&#x53D1;&#x5305;&#x4E0D;&#x6307;&#x5B9A;&#x53D1;&#x5F80;&#x4F55;&#x5904;&#x5417;&#xFF1F;&#x8FD8;&#x662F;&#x4F1A;&#x89E3;&#x6790;&#x5305;&#x91CC;&#x5934;&#x7684;&#x76EE;&#x7684;ip&#xFF0C;&#x7136;&#x540E;&#x53D1;&#x5F80;&#x8FD9;&#x4E2A;&#x76EE;&#x7684;ip?<ol>
+<li>&#x7B54;&#xFF1A;&#x4E0D;&#x7528;&#x6307;&#x5B9A;&#x53D1;&#x5F80;&#x54EA;&#x4E2A;&#x76EE;&#x7684;&#x5730;&#xFF0C;&#x56E0;&#x4E3A;&#x662F;&#x5E7F;&#x64AD;&#x7684;&#x3002;</li>
+</ol>
+</li>
+<li>&#x7F51;&#x4E0A;&#x6293;&#x597D;&#x7684;pcap&#x5305;&#xFF0C;&#x5982;&#x4F55;&#x5728;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x7528;tcpreplay&#x4F20;&#x8F93;&#xFF1F;<ol>
+<li>tcpreplay -i   &#x7F51;&#x53E3;&#x5982;eth0  -M 1000 data.pcap</li>
+</ol>
+</li>
+</ol>
+</blockquote>
 
                                 
                                 </section>
@@ -445,12 +540,12 @@
 
             
                 
-                <a href="kafkadui-jie-postgres.html" class="navigation navigation-prev " aria-label="Previous page: kafka对接postgres">
+                <a href="../gong-ju-ji.html" class="navigation navigation-prev " aria-label="Previous page: 工具集">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../ji-qi-xue-xi-ren-gong-zhi-neng.html" class="navigation navigation-next " aria-label="Next page: 机器学习人工智能">
+                <a href="wang-luo.html" class="navigation navigation-next " aria-label="Next page: 网络">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -461,7 +556,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"thrift","level":"1.6.2","depth":2,"next":{"title":"机器学习人工智能","level":"1.7","depth":1,"path":"ji-qi-xue-xi-ren-gong-zhi-neng.md","ref":"ji-qi-xue-xi-ren-gong-zhi-neng.md","articles":[{"title":"概念，关系","level":"1.7.1","depth":2,"path":"ji-qi-xue-xi-ren-gong-zhi-neng/gai-nian-ff0c-guan-xi.md","ref":"ji-qi-xue-xi-ren-gong-zhi-neng/gai-nian-ff0c-guan-xi.md","articles":[]}]},"previous":{"title":"kafka对接postgres","level":"1.6.1","depth":2,"path":"xiao-xi-xi-tong/kafkadui-jie-postgres.md","ref":"xiao-xi-xi-tong/kafkadui-jie-postgres.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"xiao-xi-xi-tong/thrift.md","mtime":"2017-03-20T07:13:15.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-10T07:44:44.799Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"tcpreplay","level":"1.2.2.1","depth":3,"next":{"title":"网络","level":"1.2.2.2","depth":3,"path":"gong-ju-ji/wang-luo.md","ref":"gong-ju-ji/wang-luo.md","articles":[]},"previous":{"title":"工具集","level":"1.2.2","depth":2,"path":"gong-ju-ji.md","ref":"gong-ju-ji.md","articles":[{"title":"tcpreplay","level":"1.2.2.1","depth":3,"path":"gong-ju-ji/tcpreplay.md","ref":"gong-ju-ji/tcpreplay.md","articles":[]},{"title":"网络","level":"1.2.2.2","depth":3,"path":"gong-ju-ji/wang-luo.md","ref":"gong-ju-ji/wang-luo.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gong-ju-ji/tcpreplay.md","mtime":"2017-03-24T03:47:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-10T07:44:44.799Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
