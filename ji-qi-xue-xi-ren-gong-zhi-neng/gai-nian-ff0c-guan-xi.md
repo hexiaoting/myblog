@@ -10,3 +10,12 @@
 
 ![](/assets/alandml.png)
 
+NLP和他们是什么关系?
+
+1. 机器学习的算法分为：
+   1. 监督式学习：教计算机如何计算
+   2. 非监督式学习：程序自己学习
+   3. 还有其他的： reinforcement learning强化学系, recommender systems推荐系统
+
+
+
