@@ -20,4 +20,5 @@
   * [thrift](xiao-xi-xi-tong/thrift.md)
 * [机器学习人工智能](ji-qi-xue-xi-ren-gong-zhi-neng.md)
   * [概念，关系](ji-qi-xue-xi-ren-gong-zhi-neng/gai-nian-ff0c-guan-xi.md)
+  * [coursera课程](ji-qi-xue-xi-ren-gong-zhi-neng/courserake-cheng.md)
 
