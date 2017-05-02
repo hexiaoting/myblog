@@ -169,8 +169,6 @@ The intuition behind the convergence is thatddθ1J\(θ1\)approaches 0 as we appr
 | :--- |
 
 
-
-
 ![](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/RDcJ-KGXEeaVChLw2Vaaug_cb782d34d272321e88f202940c36afe9_Screenshot-2016-11-03-00.06.00.png?expiry=1493769600000&hmac=sKprKxNhggWpUhlEbQLXDq4ryhlJF7J_RCP0QyZ3Y1s)
 
 # Gradient Descent For Linear Regression
@@ -179,7 +177,7 @@ The intuition behind the convergence is thatddθ1J\(θ1\)approaches 0 as we appr
 
 When specifically applied to the case of linear regression, a new form of the gradient descent equation can be derived. We can substitute our actual cost function and our actual hypothesis function and modify the equation to :
 
-| repeat until convergence: {θ0:=θ1:=}θ0−α1m∑i=1m\(hθ\(xi\)−yi\)θ1−α1m∑i=1m\(\(hθ\(xi\)−yi\)xi\) |
+| repeat until convergence: {θ0:=θ1:=}θ0−α1m∑i=1m\(hθ\(xi\)−yi\)θ1−α1m∑i=1m\(\(hθ\(xi\)−yi\)xi\) |
 | :--- |
 
 
@@ -196,4 +194,37 @@ So, this is simply gradient descent on the original cost function J. This method
 ![](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/xAQBlqaaEeawbAp5ByfpEg_24e9420f16fdd758ccb7097788f879e7_Screenshot-2016-11-09-08.36.49.png?expiry=1493769600000&hmac=8ws6CpnRpkopj-kHcIzTfWvJAQyoS4GLMh9vOFe9LPQ)
 
 The ellipses shown above are the contours of a quadratic function. Also shown is the trajectory taken by gradient descent, which was initialized at \(48,30\). The x’s in the figure \(joined by straight lines\) mark the successive values of θ that gradient descent went through as it converged to its minimum.
+
+# Matrices and Vectors
+
+Matrices are 2-dimensional arrays:
+
+
+
+| ⎡⎣⎢⎢⎢adgjbehkcfil⎤⎦⎥⎥⎥ |
+| :--- |
+
+
+The above matrix has four rows and three columns, so it is a 4 x 3 matrix.
+
+A vector is a matrix with one column and many rows:
+
+| ⎡⎣⎢⎢⎢wxyz⎤⎦⎥⎥⎥ |
+| :--- |
+
+
+So vectors are a subset of matrices. The above vector is a 4 x 1 matrix.
+
+**Notation and terms**:
+
+* Aij refers to the element in the ith row and jth column of matrix A.
+* A vector with 'n' rows is referred to as an 'n'-dimensional vector.
+* vi refers to the element in the ith row of the vector.
+* In general, all our vectors and matrices will be 1-indexed. Note that for some programming languages, the arrays are 0-indexed.
+* Matrices are usually denoted by uppercase names while vectors are lowercase.
+* "Scalar" means that an object is a single value, not a vector or matrix.
+* ℝrefers to the set of scalar real numbers.
+* ℝ𝕟refers to the set of n-dimensional vectors of real numbers.
+
+
 
