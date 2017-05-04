@@ -12,6 +12,12 @@ arping -I eth0 192.168.0.10
 
 vnstat -i em1 -l
 
+sar
+
+ntop
+
+
+
 用tcpreplay发送DNS报文时，由于：
 
 1. DNS报文平均100Bytes
@@ -21,5 +27,5 @@ vnstat -i em1 -l
 
 潜在解决方案：在多台机器上并发执行tcpreplay，这样就不会被一块网卡的吞吐量给限制住。
 
-sar
+
 
