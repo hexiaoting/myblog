@@ -122,7 +122,7 @@ Statistics for network device: em1
 >    1. 答：不用指定发往哪个目的地，因为是广播的。
 > 2. 网上抓好的pcap包，如何在两个节点之间用tcpreplay传输？
 >    1. tcpreplay -i   网口如eth0  -M 1000 data.pcap
->    2. 可以设置发的pcap包中的所有目的mac地址为我们的目的机器的mac地址，这样就会定向发包。用tcprewrite 命令修改。
+>    2. 可以设置发的pcap包中的所有目的mac地址为我们的目的机器的mac地址，这样就会定向发包。用tcprewrite 命令修改（tcprewrite -i 输入pcap文件 -o 输出pcap文件 --enet-dmac=00:12:13:14:15:16）。
 >       * 如果一个节点想收到所有网络上的包，那么需要开启混杂模式：ifconfig eth0 -promisc。这样A就可以收到B指定发给C的包（A、B、C连在同一个交换机上）。
 
 
