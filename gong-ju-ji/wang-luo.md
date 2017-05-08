@@ -18,9 +18,11 @@ ping -I eth2 192.168.0.150//通过指定端口eth2来ping192.168.0.150这个地�
 
 vnstat -i em1 -l
 
-sar -n DEV 1  
+sar -n DEV 1
 
-使用sar的过程中发现一个问题，tcpdump -i eth2是有数据包的，但是sar去看eth2的流量是几乎为0？？？
+使用sar的过程中发现一个问题，tcpdump -i eth2是有数据包的，但是sar去看eth2的流量是几乎为0？？？这是因为测试的时候发的都是广播数据，TCPdump默认开启混杂模式，而sar统计只统计目的地址匹配本机的流量即非混杂模式。只有tcpdump执行的时候即接收包的时候，sar才会显示流量数据。
+
+【开启混杂模式：ifconfig eth0 -promisc】
 
 ntop
 
