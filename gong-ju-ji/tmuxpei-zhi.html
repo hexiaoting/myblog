@@ -1,0 +1,720 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>tmux配置 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../数据库.html" />
+    
+    
+    <link rel="prev" href="wang-luo.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../基础知识.html">
+            
+                <a href="../基础知识.html">
+            
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../编码格式.html">
+            
+                <a href="../编码格式.html">
+            
+                    
+                    编码格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../gong-ju-ji.html">
+            
+                <a href="../gong-ju-ji.html">
+            
+                    
+                    工具集
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="tcpreplay.html">
+            
+                <a href="tcpreplay.html">
+            
+                    
+                    tcpreplay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="wang-luo.html">
+            
+                <a href="wang-luo.html">
+            
+                    
+                    网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2.3" data-path="tmuxpei-zhi.html">
+            
+                <a href="tmuxpei-zhi.html">
+            
+                    
+                    tmux配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../数据库.html">
+            
+                <a href="../数据库.html">
+            
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../udf持久化.html">
+            
+                <a href="../udf持久化.html">
+            
+                    
+                    UDF持久化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../citusyu-postgres-dui-jie-elasticsearch.html">
+            
+                <a href="../citusyu-postgres-dui-jie-elasticsearch.html">
+            
+                    
+                    citus与postgres对接elasticsearch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../2016再见，2017你好.html">
+            
+                <a href="../2016再见，2017你好.html">
+            
+                    
+                    2016再见，2017你好
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../书、电影.html">
+            
+                <a href="../书、电影.html">
+            
+                    
+                    书、电影
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../请回答1988.html">
+            
+                <a href="../请回答1988.html">
+            
+                    
+                    请回答1988
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../路边野餐.html">
+            
+                <a href="../路边野餐.html">
+            
+                    
+                    路边野餐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../无声告白.html">
+            
+                <a href="../无声告白.html">
+            
+                    
+                    无声告白
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../xiao-xi-xi-tong.html">
+            
+                <a href="../xiao-xi-xi-tong.html">
+            
+                    
+                    消息系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../xiao-xi-xi-tong/kafkadui-jie-postgres.html">
+            
+                <a href="../xiao-xi-xi-tong/kafkadui-jie-postgres.html">
+            
+                    
+                    kafka对接postgres
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../xiao-xi-xi-tong/thrift.html">
+            
+                <a href="../xiao-xi-xi-tong/thrift.html">
+            
+                    
+                    thrift
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ji-qi-xue-xi-ren-gong-zhi-neng.html">
+            
+                <a href="../ji-qi-xue-xi-ren-gong-zhi-neng.html">
+            
+                    
+                    机器学习人工智能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../ji-qi-xue-xi-ren-gong-zhi-neng/gai-nian-ff0c-guan-xi.html">
+            
+                <a href="../ji-qi-xue-xi-ren-gong-zhi-neng/gai-nian-ff0c-guan-xi.html">
+            
+                    
+                    概念，关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../ji-qi-xue-xi-ren-gong-zhi-neng/courserake-cheng.html">
+            
+                <a href="../ji-qi-xue-xi-ren-gong-zhi-neng/courserake-cheng.html">
+            
+                    
+                    coursera课程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >tmux配置</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="tmux&#x914D;&#x7F6E;&#x6587;&#x4EF6;">tmux&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h1>
+<h2 id="tmuxconf">.tmux.conf</h2>
+<hr>
+<p>set -g default-terminal &quot;screen-256color&quot; # colors!</p>
+<p>setw -g xterm-keys on</p>
+<p>setw -g mode-keys vi</p>
+<p>bind -Tcopy-mode-vi Escape send -X copy-selection-and-cancel</p>
+<p>unbind -Tcopy-mode-vi MouseDragEnd1Pane</p>
+<p>bind -n DoubleClick1Pane copy-mode\; send -X select-word</p>
+<p>bind -Tcopy-mode-vi TripleClick1Pane send -X select-line</p>
+<p>set -g terminal-overrides &apos;*88col*:colors=88,*256col*:colors=256,xterm*:XT:Ms=\E]52;%p1%s;%p2%s\007,rxvt-uni*:XT:Ms=\E]52;%p1%s;%p2%s\007&apos;</p>
+<p>set -s escape-time 0                      # fastest command sequences</p>
+<p>set -sg repeat-time 600                   # increase repeat timeout</p>
+<p>set -s quiet on                           # disable various messages</p>
+<p>set -g mouse on</p>
+<p>set -g prefix C-x                        # GNU-Screen compatible prefix</p>
+<p>set -g history-limit 5000                 # boost history</p>
+<p># edit configuration</p>
+<p>bind e new-window -n &apos;~/.tmux.conf.local&apos; &quot;sh -c &apos;${EDITOR:-vim} ~/.tmux.conf.local &amp;&amp; tmux source ~/.tmux.conf &amp;&amp; tmux display \&quot;~/.tmux.conf sourced\&quot;&apos;&quot;</p>
+<p># reload configuration</p>
+<p>bind r source-file ~/.tmux.conf \; display &apos;~/.tmux.conf sourced&apos;</p>
+<p># see <a href="https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard" target="_blank">https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard</a></p>
+<p>if &apos;which -s reattach-to-user-namespace&apos; &apos;set -g default-command &quot;exec initializing... 2&gt; /dev/null &amp; reattach-to-user-namespace $SHELL -l&quot;&apos;</p>
+<p># -- display -------------------------------------------------------------------</p>
+<p>set -g base-index 1         # start windows numbering at 1</p>
+<p>setw -g pane-base-index 1   # make pane numbering consistent with windows</p>
+<p>setw -g automatic-rename on # rename window to reflect current program</p>
+<p># renumber windows when a window is closed</p>
+<p>set -g renumber-windows on</p>
+<p>set -g set-titles on                        # set terminal title</p>
+<p>set -g set-titles-string &apos;#h &#x2750; #S &#x25CF; #I #W&apos;</p>
+<p>set -g display-panes-time 800 # slightly longer pane indicators display time</p>
+<p>set -g display-time 1000      # slightly longer status messages display time</p>
+<p>set -g status-interval 10     # redraw status line every 10 seconds</p>
+<p># 24 hour clock</p>
+<p>setw -g clock-mode-style 24</p>
+<p># clear both screen and history</p>
+<p>bind -n C-l send-keys C-l \; run &apos;tmux clear-history&apos;</p>
+<p># activity</p>
+<p>set -g monitor-activity on</p>
+<p>set -g visual-activity off</p>
+<p># -- navigation ----------------------------------------------------------------</p>
+<p># find session</p>
+<p>bind C-f command-prompt -p find-session &apos;switch-client -t %%&apos;</p>
+<p># switch windows alt+number</p>
+<p>bind -n M-1 select-pane -t 1</p>
+<p>bind -n M-2 select-pane -t 2</p>
+<p>bind -n M-3 select-pane -t 3</p>
+<p>bind -n M-4 select-pane -t 4</p>
+<p>bind -n M-5 select-pane -t 5</p>
+<p>bind -n M-6 select-pane -t 6</p>
+<p>bind -n M-7 select-pane -t 7</p>
+<p>bind -n M-8 select-pane -t 8</p>
+<p>bind -n M-9 select-pane -t 9</p>
+<p># pane navigation</p>
+<p>bind -r h select-pane -L  # move left</p>
+<p>bind -r j select-pane -D  # move down</p>
+<p>bind -r k select-pane -U  # move up</p>
+<p>bind -r l select-pane -R  # move right</p>
+<p>bind &gt; swap-pane -D       # swap current pane with the next one</p>
+<p>bind &lt; swap-pane -U       # swap current pane with the previous one</p>
+<p># maximize current pane</p>
+<p>bind 1 run &apos;cut -c3- ~/.tmux.conf | sh -s maximize_pane&apos;</p>
+<p># pane resizing</p>
+<p>bind -r H resize-pane -L 2</p>
+<p>bind -r J resize-pane -D 2</p>
+<p>bind -r K resize-pane -U 2</p>
+<p>bind -r L resize-pane -R 2</p>
+<p># window navigation</p>
+<p>unbind n</p>
+<p>unbind p</p>
+<p>bind -r C-h previous-window # select previous window</p>
+<p>bind -r C-l next-window     # select next window</p>
+<p>bind Tab last-window        # move to last active window</p>
+<p># toggle mouse</p>
+<p>bind m run &quot;cut -c3- ~/.tmux.conf | sh -s toggle_mouse&quot;</p>
+<p># -- urlview -------------------------------------------------------------------</p>
+<p>bind U run &quot;cut -c3- ~/.tmux.conf | sh -s urlview #{pane_id}&quot;</p>
+<p># -- facebook pathpicker -------------------------------------------------------</p>
+<p>bind F run &quot;cut -c3- ~/.tmux.conf | sh -s fpp #{pane_id}&quot;</p>
+<p># -- list choice ---------------------------------------------------------------</p>
+<p>bind -t vi-choice h tree-collapse</p>
+<p>bind -t vi-choice l tree-expand</p>
+<p>run -b &apos;tmux bind -t vi-choice K start-of-list 2&gt; /dev/null&apos;</p>
+<p>run -b &apos;tmux bind -t vi-choice J end-of-list 2&gt; /dev/null&apos;</p>
+<p>bind -t vi-choice H tree-collapse-all</p>
+<p>bind -t vi-choice L tree-expand-all</p>
+<p>bind -t vi-choice Escape cancel</p>
+<p># -- copy mode -----------------------------------------------------------------</p>
+<p>bind Enter copy-mode # enter copy mode</p>
+<p>bind b list-buffers  # list paster buffers</p>
+<p>bind p paste-buffer  # paste from the top pate buffer</p>
+<p>bind P choose-buffer # choose which buffer to paste from</p>
+<p># copy to Mac OSX pasteboard</p>
+<p>if -b &apos;which -s reattach-to-user-namespace&apos; &apos;bind y run &quot;tmux save-buffer - | reattach-to-user-namespace pbcopy&quot;&apos;</p>
+<p># -- user defined --------------------------------------------------------------</p>
+<p>if &apos;[ -f ~/.tmux.conf.local ]&apos; &apos;source ~/.tmux.conf.local&apos;</p>
+<p># -- 8&lt; ------------------------------------------------------------------------</p>
+<p>run &apos;cut -c3- ~/.tmux.conf | sh -s apply_configuration&apos;</p>
+<h2 id="tmuxconflocal">.tmux.conf.local</h2>
+<hr>
+<p># (&#x2011;&#x25CF;&#x2011;&#x25CF;)&gt; released under the WTFPL v2 license, by Gregory Pakosz (@gpakosz)</p>
+<p># use the powerline patched font variant of the theme, possible values are:</p>
+<p>#   - default</p>
+<p>#   - powerline</p>
+<p>tmux_conf_theme=default</p>
+<p>#tmux_conf_theme=powerline</p>
+<p># display an indicator in the status line when the prefix key has been pressed,</p>
+<p># possible values are:</p>
+<p>#   - enabled</p>
+<p>#   - disabled</p>
+<p>tmux_conf_theme_prefix=disabled</p>
+<p>#tmux_conf_theme_prefix=enabled</p>
+<p># display the battery information in the status line, possible values are:</p>
+<p>#   - enabled</p>
+<p>#   - disabled</p>
+<p>tmux_conf_theme_battery=enabled</p>
+<p>#tmux_conf_theme_battery=disabled</p>
+<p># style to use for the battery status, possible values are:</p>
+<p>#   - bar</p>
+<p>#   - percentage</p>
+<p>tmux_conf_battery_style=bar</p>
+<p>#tmux_conf_battery_style=percentage</p>
+<p># symbols to use for battery status, possible values are:</p>
+<p>#   - block</p>
+<p>#   - heart</p>
+<p>tmux_conf_battery_symbol=block</p>
+<p>#tmux_conf_battery_symbol=heart</p>
+<p># number of symbols to use for battery status</p>
+<p>tmux_conf_battery_symbol_count=auto</p>
+<p>#tmux_conf_battery_symbol_count=5</p>
+<p># palette used for the battery status, possible values are:</p>
+<p>#   - &apos;colour_full_fg,colour_empty_fg,colour_bg&apos;</p>
+<p>#   - heat</p>
+<p>#   - gradient</p>
+<p>tmux_conf_battery_palette=&apos;#d70000,#e4e4e4,#000000&apos;</p>
+<p>#tmux_conf_battery_palette=colour160,colour254,colour16</p>
+<p>#tmux_conf_battery_palette=heat</p>
+<p>#tmux_conf_battery_palette=gradient</p>
+<p># display the battery status: charging (U+26A1) / discharging (U+1F50B)</p>
+<p>tmux_conf_battery_status=enabled</p>
+<p>#tmux_conf_battery_status=disabled</p>
+<p># or alternatively use an external tool, e.g. <a href="https://github.com/Goles/Battery" target="_blank">https://github.com/Goles/Battery</a></p>
+<p>#tmux_conf_battery=&apos;#(battery -t) &apos;</p>
+<p># display the time in the status line, possible values are:</p>
+<p>#   - enabled</p>
+<p>#   - disabled</p>
+<p>tmux_conf_theme_time=enabled</p>
+<p>#tmux_conf_theme_time=disabled</p>
+<p># display the date in the status line, possible values are:</p>
+<p>#   - enabled</p>
+<p>#   - disabled</p>
+<p>tmux_conf_theme_date=enabled</p>
+<p>#tmux_conf_theme_date=disabled</p>
+<p># display the username in the status line, possible values are:</p>
+<p>#   - enabled</p>
+<p>#   - disabled</p>
+<p>#   - ssh</p>
+<p>tmux_conf_theme_username=enabled</p>
+<p>#tmux_conf_theme_username=disabled</p>
+<p>#tmux_conf_theme_username=ssh</p>
+<p># display the hostname in the status line, possible values are:</p>
+<p>#   - enabled</p>
+<p>#   - disabled</p>
+<p>#   - ssh</p>
+<p>tmux_conf_theme_hostname=enabled</p>
+<p>#tmux_conf_theme_hostname=ssh</p>
+<p># highlight focuse pane, possible values are:</p>
+<p>#   - enabled</p>
+<p>#   - disabled</p>
+<p>tmux_conf_theme_highlight_focused_pane=disabled</p>
+<p># should new windows retain current path, possible values are:</p>
+<p>#   - true</p>
+<p>#   - false</p>
+<p>tmux_conf_new_windows_retain_current_path=false</p>
+<p>#tmux_conf_new_windows_retain_current_path=true</p>
+<p># should new panes reatin current path, possible values are:</p>
+<p>#   - true</p>
+<p>#   - false</p>
+<p>tmux_conf_new_panes_retain_current_path=true</p>
+<p>#tmux_conf_new_panes_retain_current_path=false</p>
+<p># prompt for session name when creating a new session, possible values are:</p>
+<p>#   - true</p>
+<p>#   - false</p>
+<p>tmux_conf_new_session_prompt=false</p>
+<p>#tmux_conf_new_session_prompt=true</p>
+<p># if you&apos;re running tmux within iTerm2</p>
+<p>#   - and tmux is 1.9 or 1.9a</p>
+<p>#   - and iTerm2 is configured to let option key act as +Esc</p>
+<p>#   - and iTerm2 is configured to send [1;9A -&gt; [1;9D for option + arrow keys</p>
+<p># then uncomment the following line to make Meta + arrow keys mapping work</p>
+<p>#set -g terminal-overrides &quot;*:kUP3=\e[1;9A,*:kDN3=\e[1;9B,*:kRIT3=\e[1;9C,*:kLFT3=\e[1;9D&quot;</p>
+<p># ------------------------------------------------------------------------------</p>
+<p># this is the place to further customize tmux&apos;s configuration</p>
+<p>#set -g history-limit 10000</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="wang-luo.html" class="navigation navigation-prev " aria-label="Previous page: 网络">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../数据库.html" class="navigation navigation-next " aria-label="Next page: 数据库">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"tmux配置","level":"1.2.2.3","depth":3,"next":{"title":"数据库","level":"1.3","depth":1,"path":"数据库.md","ref":"数据库.md","articles":[{"title":"UDF持久化","level":"1.3.1","depth":2,"path":"udf持久化.md","ref":"udf持久化.md","articles":[]},{"title":"citus与postgres对接elasticsearch","level":"1.3.2","depth":2,"path":"citusyu-postgres-dui-jie-elasticsearch.md","ref":"citusyu-postgres-dui-jie-elasticsearch.md","articles":[]}]},"previous":{"title":"网络","level":"1.2.2.2","depth":3,"path":"gong-ju-ji/wang-luo.md","ref":"gong-ju-ji/wang-luo.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gong-ju-ji/tmuxpei-zhi.md","mtime":"2017-04-13T02:13:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-20T14:27:46.612Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

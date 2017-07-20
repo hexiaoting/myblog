@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../数据库.html" />
+    <link rel="next" href="tmuxpei-zhi.html" />
     
     
     <link rel="prev" href="tcpreplay.html" />
@@ -162,6 +162,19 @@
             
                     
                     网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="tmuxpei-zhi.html">
+            
+                <a href="tmuxpei-zhi.html">
+            
+                    
+                    tmux配置
             
                 </a>
             
@@ -367,6 +380,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.2" data-path="../ji-qi-xue-xi-ren-gong-zhi-neng/courserake-cheng.html">
+            
+                <a href="../ji-qi-xue-xi-ren-gong-zhi-neng/courserake-cheng.html">
+            
+                    
+                    coursera课程
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -421,7 +447,25 @@
 <p>ip a</p>
 <p>ethtool eth0</p>
 <p>arping -I eth0 192.168.0.10</p>
-<p>&#x67E5;&#x770B;&#x4E24;&#x4E2A;&#x7F51;&#x53E3;&#x662F;&#x5426;&#x8FDE;&#x8F7D;&#x540C;&#x4E00;&#x4E2A;&#x4EA4;&#x6362;&#x673A;&#x4E0A;</p>
+<hr>
+<p>ping -I eth2 192.168.0.150//&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;eth2&#x6765;ping192.168.0.150&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x3002;</p>
+<p>&#x67E5;&#x770B;&#x4E24;&#x4E2A;&#x7F51;&#x53E3;&#x662F;&#x5426;&#x8FDE;&#x8F7D;&#x540C;&#x4E00;&#x4E2A;&#x4EA4;&#x6362;&#x673A;&#x4E0A;: &#x770B;&#x4ED6;ping&#x8FC7;&#x53BB;&#x6709;&#x51E0;&#x8DF3;</p>
+<hr>
+<p>&#x67E5;&#x770B;&#x6D41;&#x91CF;&#x7684;&#x5DE5;&#x5177;&#xFF1A;vnstat , sar, ntop</p>
+<p>vnstat -i em1 -l</p>
+<p>sar -n DEV 1</p>
+<p>&#x4F7F;&#x7528;sar&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;tcpdump -i eth2&#x662F;&#x6709;&#x6570;&#x636E;&#x5305;&#x7684;&#xFF0C;&#x4F46;&#x662F;sar&#x53BB;&#x770B;eth2&#x7684;&#x6D41;&#x91CF;&#x662F;&#x51E0;&#x4E4E;&#x4E3A;0&#xFF1F;&#xFF1F;&#xFF1F;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x6D4B;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#x53D1;&#x7684;&#x90FD;&#x662F;&#x5E7F;&#x64AD;&#x6570;&#x636E;&#xFF0C;TCPdump&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#x6DF7;&#x6742;&#x6A21;&#x5F0F;&#xFF0C;&#x800C;sar&#x7EDF;&#x8BA1;&#x53EA;&#x7EDF;&#x8BA1;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5339;&#x914D;&#x672C;&#x673A;&#x7684;&#x6D41;&#x91CF;&#x5373;&#x975E;&#x6DF7;&#x6742;&#x6A21;&#x5F0F;&#x3002;&#x53EA;&#x6709;tcpdump&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x5373;&#x63A5;&#x6536;&#x5305;&#x7684;&#x65F6;&#x5019;&#xFF0C;sar&#x624D;&#x4F1A;&#x663E;&#x793A;&#x6D41;&#x91CF;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x3010;&#x5F00;&#x542F;&#x6DF7;&#x6742;&#x6A21;&#x5F0F;&#xFF1A;ifconfig eth0 -promisc&#x3011;</p>
+<p>ntop</p>
+<hr>
+<p>&#x7528;tcpreplay&#x53D1;&#x9001;DNS&#x62A5;&#x6587;&#x65F6;&#xFF0C;&#x7531;&#x4E8E;&#xFF1A;</p>
+<ol>
+<li>DNS&#x62A5;&#x6587;&#x5E73;&#x5747;100Bytes</li>
+<li>&#x6BCF;&#x4E2A;&#x7F51;&#x5361;&#x53EF;&#x5904;&#x7406;&#x7684;&#x541E;&#x5410;&#x7387;&#x6709;&#x9650;&#xFF0C;&#x6BD4;&#x5982;&#x6700;&#x5927;&#x8FBE;&#x5230;300&#x4E07;&#x4E2A;&#x5305;/s&#x3002;</li>
+</ol>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x65E0;&#x8BBA;&#x5982;&#x4F55;&#x5728;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x5E76;&#x53D1;&#x6267;&#x884C;&#x51E0;&#x4E2A;tcpreplay&#xFF0C;&#x7EDF;&#x4E00;&#x7F51;&#x5361;&#x7684;&#x53D1;&#x9001;&#x6D41;&#x91CF;&#x6700;&#x5927;&#x5C31;&#x662F;3Gbps&#x3002;</p>
+<p>&#x6F5C;&#x5728;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;&#x5728;&#x591A;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x5E76;&#x53D1;&#x6267;&#x884C;tcpreplay&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x4F1A;&#x88AB;&#x4E00;&#x5757;&#x7F51;&#x5361;&#x7684;&#x541E;&#x5410;&#x91CF;&#x7ED9;&#x9650;&#x5236;&#x4F4F;&#x3002;</p>
+<p>&#x6700;&#x7EC8;&#xFF0C;&#x5728;&#x4E2D;&#x5FC3;&#x7684;&#x53D1;&#x5305;&#x673A;108&#x4E0A;&#x7684;&#x95EE;&#x9898;&#x662F;&#xFF1A;&#x6211;&#x4EEC;&#x7684;&#x5305;&#x53D1;&#x51FA;&#x53BB;&#x7684;&#x901F;&#x7387;&#x662F;&#x633A;&#x5927;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x4EA4;&#x6362;&#x673A;&#x90A3;&#x8FB9;&#x5C31;&#x5DF2;&#x7ECF;&#x4E22;&#x6389;&#x5F88;&#x591A;&#x4E86;&#xFF0C;&#x539F;&#x56E0;&#x662F;&#x6784;&#x9020;&#x7684;&#x5305;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x56DE;&#x73AF;&#x3002;&#x540E;&#x6765;&#x81EA;&#x5DF1;&#x6784;&#x9020;&#x4E86;51207&#x4E2A;&#x62A5;&#x6587;&#x7684;&#x4E00;&#x4E2A;pcap&#x5305;&#xFF08;&#x5404;&#x4E2A;&#x62A5;&#x6587;&#x7684;&#x5927;&#x5C0F;&#x90FD;&#x5C0F;&#x4E8E;2000Bytes&#xFF09;&#xFF0C;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;tcpreplay&#x7684;&#x901F;&#x7387;&#x5C31;&#x80FD;&#x8FBE;&#x5230;4Gbps. &#x540E;&#x6765;&#x53D1;&#x73B0;&#x53EF;&#x4EE5;&#x7528;tcprewrite&#x5DE5;&#x5177;&#x6539;&#x5199;&#x6240;&#x6709;&#x7684;&#x62A5;&#x6587;&#x7684;&#x76EE;&#x7684;ip&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5B9A;&#x5411;&#x7684;&#x7ED9;&#x5382;&#x5546;&#x53D1;&#x6570;&#x636E;&#x4E86;&#xFF0C;&#x800C;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x6536;&#x4E0D;&#x5230;&#x6570;&#x636E;&#x3002;&#x3010;&#x9700;&#x8981;&#x770B;&#x770B;&#x7F51;&#x7EDC;&#x77E5;&#x8BC6;&#xFF1A;&#x4E3A;&#x4F55;&#x8BBE;&#x7F6E;&#x6B63;&#x786E;&#x7684;&#x76EE;&#x7684; mac&#x5730;&#x5740;&#xFF0C;&#x53EA;&#x6709;&#x90A3;&#x4E00;&#x53F0;&#x80FD;&#x6536;&#x5230;&#xFF0C;&#x800C;&#x4E71;&#x7684;mac&#x5730;&#x5740;&#x5927;&#x5BB6;&#x5168;&#x90E8;&#x90FD;&#x80FD;&#x6536;&#x5230;&#x3011;&#x3002;</p>
 
                                 
                                 </section>
@@ -454,7 +498,7 @@
                 </a>
                 
                 
-                <a href="../数据库.html" class="navigation navigation-next " aria-label="Next page: 数据库">
+                <a href="tmuxpei-zhi.html" class="navigation navigation-next " aria-label="Next page: tmux配置">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -465,7 +509,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"网络","level":"1.2.2.2","depth":3,"next":{"title":"数据库","level":"1.3","depth":1,"path":"数据库.md","ref":"数据库.md","articles":[{"title":"UDF持久化","level":"1.3.1","depth":2,"path":"udf持久化.md","ref":"udf持久化.md","articles":[]},{"title":"citus与postgres对接elasticsearch","level":"1.3.2","depth":2,"path":"citusyu-postgres-dui-jie-elasticsearch.md","ref":"citusyu-postgres-dui-jie-elasticsearch.md","articles":[]}]},"previous":{"title":"tcpreplay","level":"1.2.2.1","depth":3,"path":"gong-ju-ji/tcpreplay.md","ref":"gong-ju-ji/tcpreplay.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gong-ju-ji/wang-luo.md","mtime":"2017-03-24T02:26:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-10T07:44:44.799Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"网络","level":"1.2.2.2","depth":3,"next":{"title":"tmux配置","level":"1.2.2.3","depth":3,"path":"gong-ju-ji/tmuxpei-zhi.md","ref":"gong-ju-ji/tmuxpei-zhi.md","articles":[]},"previous":{"title":"tcpreplay","level":"1.2.2.1","depth":3,"path":"gong-ju-ji/tcpreplay.md","ref":"gong-ju-ji/tcpreplay.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gong-ju-ji/wang-luo.md","mtime":"2017-05-08T07:57:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-20T14:27:46.612Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
