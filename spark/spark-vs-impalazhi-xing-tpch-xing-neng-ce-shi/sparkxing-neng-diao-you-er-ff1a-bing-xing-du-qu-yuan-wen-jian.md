@@ -63,5 +63,7 @@
 
 运行时间从1.4m提升到1.3minutes. 前6个job 总共的时间开销为从7s降为3s。
 
+\[conf/spark-defaults.conf未进行任何配置\]
+
 ![](/assets/tune2_parallele_1.png)
 
