@@ -61,5 +61,7 @@
 
 ## 执行结果
 
+运行时间从1.4m提升到1.3minutes. 前6个job 总共的时间开销为3s。
 
+![](/assets/tune2_parallele_1.png)
 
