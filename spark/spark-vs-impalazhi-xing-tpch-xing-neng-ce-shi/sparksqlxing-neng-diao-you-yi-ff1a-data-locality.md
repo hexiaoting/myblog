@@ -64,11 +64,25 @@
 
 * stages的tasks
 
+第8个job的某个stages：执行fileScanRDD。分为198个分区。
+
+![](/assets/tune1_locality_tasks.png)
+
+从图中可以看到Locality Level是ANY，而不是Process_level或N_ode\_level. 具体查看Executor的日志会发现很大概率读了remote node上的block.这就会产生很多的数据shuffle.
+
 ## 原因
 
-spark在分配tasks时，
+spark和HDFS的slaves没有对应上，hostname和ip未关联（这里应该是spark的一个小bug）
+
+> **其中要关注spark参数**[**说明**](https://spark.apache.org/docs/latest/tuning.html#data-locality)**:spark.locality.wait的配置等。**
 
 ## 解决办法
 
+重新启动spark的worker：在每个worker上执行./sbin/start-slave.sh -i hostname "spark://dell127:7077"
 
+![](/assets/tune1_locality_newspark.png)
+
+task的locality level为NODE\_LEVEL.
+
+![](/assets/tune1_localtity_nodelevel.png) 
 
