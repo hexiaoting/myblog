@@ -50,15 +50,17 @@
 
 ## 结果
 
-* 执行时间：1.4m
+* 执行时间：1.5m![](/assets/tune1_locality_2.png)
 
-![](/assets/tune1_locality_1.png)
-
-       整个查询被分为了10个任务，0-5个任务分别读取6个parquet表，6和7是对两个最小的表region和nation进行broadcast,第8个查询是做这些表的关联，第9个任务是执行最后的聚合排序。
+```
+   整个查询被分为了10个任务，0-5个任务分别读取6个parquet表，
+   6和7是对两个最小的表region和nation进行broadcast,
+   第8个查询是做这些表的关联，第9个任务是执行最后的聚合排序。
+```
 
 * 查询树
 
-
+![](/assets/tune1_locality_plantree.png)后续还有两个小表的broadcast exchange...
 
 * stages的tasks
 
