@@ -24,4 +24,7 @@
 * [Spark](spark.md)
   * [Spark vs. Impala执行TPCH性能测试](spark/spark-vs-impalazhi-xing-tpch-xing-neng-ce-shi.md)
     * [Tpch之SparkSQL vs. Impala](spark/spark-vs-impalazhi-xing-tpch-xing-neng-ce-shi/tpchzhi-sparksql-vs-impala.md)
+    * [Spark性能调优一：data locality](spark/spark-vs-impalazhi-xing-tpch-xing-neng-ce-shi/sparksqlxing-neng-diao-you-yi-ff1a-data-locality.md)
+    * Spark性能调优二：并行读取源文件
+    * Spark性能调优三：基本参数配置
 
