@@ -1,5 +1,3 @@
-
-
 # 测试环境
 
 * 硬件及软件环境
@@ -10,7 +8,7 @@
 | memory | 128G | 128G | 128G | 128G | 128G |
 | network | 千兆网 | 千兆网 | 千兆网 | 千兆网 | 千兆网 |
 | disk\(数据盘\) | 3T \* 2 | 3T \* 2 | 3T \* 2 | 3T \* 2 | 3T \* 2 |
-| OS  | CentOS 7.3 | CentOS 7.3 | CentOS 7.3 | CentOS 7.3 | CentOS 7.3 |
+| OS | CentOS 7.3.1611 | CentOS 7.3.1611 | CentOS 7.3.1611 | CentOS 7.3.1611 | CentOS 7.3.1611 |
 | Hadoop 2.6.5      \( only  HDFS\) | namenode | datanode | datanode | datanode | datanode |
 | Spark2.1.1 | Master | worker | worker | worker | worker |
 | Impala2.9 | catalogd +          statestored | impalad 一个实例 | impalad | impalad | impalad |
@@ -32,16 +30,65 @@
 
 > 注意：生成的表中把decima类型转为double, 把date类型转为timestamp这样sparksql和impala才可以读取同一份parquet数据作对比。同时，在Impala中把char类型转为String类型，这样可以提升性能。
 
-
-
 # 构建表执行查询
 
-表的构建
+## 表的构建
 
 * SparkSQL: 不需要，直接读取parquet文件生成Dataframe直接处理，要用spark-sql接口生成表也行，但是性能没有直接写DataFrame好
-* Impala:
+* Impala: 见脚本：bin/impala\_tpch\_ddl\_spark\_parquet.sql
+
+> 执行语法：
+>
+> ```
+> create external table $TABLE ($COLUMN $TYPE) stored as parquet location "hdfs://namenode:20500/$DIR"
+> ```
+>
+> 创建外部表的好处是再删除表时不会删除location指定的文件。
+
+## TPCH Query
+
+* 最原始的22个查询请求见bin/tpch\_queries.sql
+* SparkSQL：由于用SparkSQL的./bin/spark-sql.sh接口比用DataFrame实现的性能差，因此，本次测试针对TPCH的22个查询全部重新实现DataFrame：见目录[tpch-spark](https://github.com/hexiaoting/SQL-TPC-Test/tree/master/tpch-spark)\(这是在github上开源的一个库\). 
+* Impala：直接执行sql语句，相应的22个sql查询请求见目录[tpch-impala](https://github.com/hexiaoting/SQL-TPC-Test/tree/master/tpch-impala). 通过脚本bin/impala\_tpch\_query.sh执行。
+
+> 注意：Impala和SparkSQL之前之前要统计信息：
+>
+> | impala | compute stats $TABLE |
+> | :--- | :--- |
+> | sparksql | ANALYZE TABLE $TABLE COMPUTE STATISTICS NOSCAN; |
+
+执行结果：
+
+| Tpch100G-Query | Impalat统计信息 | SparkSQL |
+| :--- | :--- | :--- |
+| 1 | 22.65 | 31.47 |
+| 2 | 1.82 | 23.73 |
+| 3 | 29.76 | 71.34 |
+| 4 | 2.90 | 24.38 |
+| 5 | 5.66 | 83.31 |
+| 6 | 1.97 | 55.01 |
+| 7 | 32.26 | 83.61 |
+| 8 | 6.16 | 82.76 |
+| 9 | 26.87 | 95.66 |
+| 10 | 8.04 | 44.92 |
+| 11 | 1.50 | 25.16 |
+| 12 | 3.52 | 21.99 |
+| 13 | 19.66 | 28.50 |
+| 14 | 3.82 | 45.98 |
+| 15 | 5.01 | 91.80 |
+| 16 | 7.80 | 20.73 |
+| 17 | 5.72 | 67.97 |
+| 18 | 28.74 | 45.65 |
+| 19 | 11.14 | 24.49 |
+| 20 | 4.35 | 65.35 |
+| 21 | 42.82 | 112.79 |
+| 22 | 5.01 | 15.83 |
 
 
 
+![](/assets/impalaSparkSQL测试对比图.png)
 
+从以上测试结果可以暗处Impala的性能更优，平均比Spark快乐2-3倍左右，对于更实时的查询，性能优势更加明显。
+
+通过初步观察服务器的CPU，磁盘以及网络来看，Impala执行查询消耗的资源远低于Spark.
 
