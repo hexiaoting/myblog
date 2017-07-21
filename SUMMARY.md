@@ -10,7 +10,6 @@
 * [数据库](数据库.md)
   * [UDF持久化](udf持久化.md)
   * [citus与postgres对接elasticsearch](citusyu-postgres-dui-jie-elasticsearch.md)
-* [2016再见，2017你好](2016再见，2017你好.md)
 * [书、电影](书、电影.md)
   * [请回答1988](请回答1988.md)
   * [路边野餐](路边野餐.md)
