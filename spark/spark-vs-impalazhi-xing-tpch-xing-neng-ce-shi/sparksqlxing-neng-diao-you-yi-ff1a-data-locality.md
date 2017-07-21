@@ -68,7 +68,7 @@
 
 ![](/assets/tune1_locality_tasks.png)
 
-从图中可以看到Locality Level是ANY，而不是Process_level或N_ode\_level. 具体查看Executor的日志会发现很大概率读了remote node上的block.这就会产生很多的数据shuffle.
+从图中可以看到Locality Level是ANY，而不是Process\_level或N\_ode\_level. 具体查看Executor的日志会发现很大概率读了remote node上的block.这就会产生很多的数据shuffle.
 
 ## 原因
 
@@ -82,7 +82,9 @@ spark和HDFS的slaves没有对应上，hostname和ip未关联（这里应该是s
 
 ![](/assets/tune1_locality_newspark.png)
 
-task的locality level为NODE\_LEVEL.
+task的locality level为NODE\_LEVEL。最终的查询时间从1.5m提升为1.4m
 
-![](/assets/tune1_localtity_nodelevel.png) 
+![](/assets/tune1_localtity_nodelevel.png)
+
+
 
