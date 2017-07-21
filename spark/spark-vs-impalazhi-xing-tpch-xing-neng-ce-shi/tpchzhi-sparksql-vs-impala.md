@@ -59,7 +59,7 @@
 
 执行结果：
 
-| Tpch100G-Query | Impala统计信息 | SparkSQL |
+| Tpch100G-Query | Impala\(s\) | SparkSQL\(s\) |
 | :--- | :--- | :--- |
 | 1 | 22.65 | 31.47 |
 | 2 | 1.82 | 23.73 |
