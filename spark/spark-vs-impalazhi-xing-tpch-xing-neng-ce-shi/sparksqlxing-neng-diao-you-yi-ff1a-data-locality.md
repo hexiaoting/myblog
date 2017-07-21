@@ -82,9 +82,7 @@ spark和HDFS的slaves没有对应上，hostname和ip未关联（这里应该是s
 
 ![](/assets/tune1_locality_newspark.png)
 
-task的locality level为NODE\_LEVEL。最终的查询时间从1.5m提升为1.4m
+task的locality level为NODE\_LEVEL。最终的查询时间从1.5m提升为1.4m.
 
 ![](/assets/tune1_localtity_nodelevel.png)
-
-
 
