@@ -2,9 +2,7 @@
 
 ## 优化点
 
-在上一节《Spark性能调优一：data locality》中我们看到执行tpch query5的代码是先通过spark.read.parquet获得6个表的dataframe,  然后再进行表之间的关联。
-
-从Spark WebUI\(http://node:4040\)上![](/assets/tune1_locality_2.png)可以看出这些parquet job是顺序执行的，读取6个表的parquet任务大约为7s，而每个parquet最多占用2s, 那是不是可以将前面这些任务并发执行呢？
+在上一节《Spark性能调优一：data locality》中我们看到执行tpch query5的代码是先通过spark.read.parquet获得6个表的dataframe,  然后再进行表之间的关联。![](/assets/tune1_locality_2.png)从Spark WebUI\([http://node:4040\)上 可以看出这些parquet](http://node:4040%29上![]%28/assets/tune1_locality_2.png%29可以看出这些parquet) job是顺序执行的，读取6个表的parquet任务大约为7s，而每个parquet最多占用2s, 那是不是可以将前面这些任务并发执行呢？
 
 当然可以。
 
@@ -62,8 +60,6 @@
 ```
 
 ## 执行结果
-
-
 
 
 
