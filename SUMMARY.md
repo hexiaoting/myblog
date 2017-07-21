@@ -26,5 +26,5 @@
     * [Tpch之SparkSQL vs. Impala](spark/spark-vs-impalazhi-xing-tpch-xing-neng-ce-shi/tpchzhi-sparksql-vs-impala.md)
     * [Spark性能调优一：data locality](spark/spark-vs-impalazhi-xing-tpch-xing-neng-ce-shi/sparksqlxing-neng-diao-you-yi-ff1a-data-locality.md)
     * [Spark性能调优二：并行读取源文件](spark/spark-vs-impalazhi-xing-tpch-xing-neng-ce-shi/sparkxing-neng-diao-you-er-ff1a-bing-xing-du-qu-yuan-wen-jian.md)
-    * Spark性能调优三：基本参数配置
+    * [Spark性能调优三：基本参数配置](spark/spark-vs-impalazhi-xing-tpch-xing-neng-ce-shi/sparkxing-neng-diao-you-san-ff1a-ji-ben-can-shu-pei-zhi.md)
 
