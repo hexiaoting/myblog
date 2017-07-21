@@ -2,15 +2,21 @@
 
 ## 主要参数说明
 
-spark.sql.shuffle.partitions
+| 参数 | 默认值/可配置值 | 说明 |
+| :--- | :--- | :--- |
+| spark.serializer | org.apache.spark.serializer.KryoSerializer | 数据序列化 |
+| spark.sql.shuffle.partitions | 200/集群cores的2-3倍 |  |
+| spark.local.dir |  |  |
 
-spark.local.dir
+---
 
 ## 测试
 
 conf/spark-defaults.conf
 
 spark.sql.shuffle.partitions 320
+
+---
 
 ## 结果
 
