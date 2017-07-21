@@ -54,7 +54,7 @@
 
 ```
    整个查询被分为了10个任务，0-5个任务分别读取6个parquet表，
-   6和7是对两个最小的表region和nation进行broadcast,
+   6和7是对两个最小的表region和nation进行broadcast(spark内部会判断小于10MB的表会进行broadcast),
    第8个查询是做这些表的关联，第9个任务是执行最后的聚合排序。
 ```
 
